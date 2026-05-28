@@ -1,0 +1,56 @@
+2026-05-28 13:15:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:15:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:15:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:15:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:15:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:15:07 [main] INFO  base.BaseTest - Cleared 27 screenshot(s) from previous run
+2026-05-28 13:15:08 [main] INFO  base.BaseTest - Test suite started
+2026-05-28 13:15:08 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-28 13:15:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:15:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:15:11 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-28 13:15:11 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 13:15:41 [main] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-28 13:15:41 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-28 13:15:41 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-28 13:15:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:15:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:15:42 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-28 13:15:42 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 13:16:12 [main] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-28 13:16:13 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-28 13:16:13 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-28 13:16:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:16:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:16:14 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-28 13:16:14 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 13:16:36 [main] ERROR listeners.TestNGListener - Test failed: testInvalidLogin — unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=148.0.7778.216)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9dfd8ad62a02af271ff360519bb65df5, get {url=https://advantageonlineshopping.com/#/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62218}, goog:processID: 12676, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62218/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9dfd8ad62a02af271ff360519bb65df5
+2026-05-28 13:16:36 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testInvalidLogin_20260528_131636.png
+2026-05-28 13:16:37 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testInvalidLogin_20260528_131637.png
+2026-05-28 13:16:37 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-28 13:16:37 [main] INFO  base.BaseTest - Launching chrome for: testValidLogin
+2026-05-28 13:16:37 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:16:37 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:16:38 [main] INFO  base.BaseTest - Browser ready for: testValidLogin
+2026-05-28 13:16:38 [main] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-28 13:17:00 [main] WARN  listeners.TestNGListener - Test skipped: testValidLogin
+2026-05-28 13:17:00 [main] INFO  base.BaseTest - Browser closed: testValidLogin
+2026-05-28 13:17:00 [main] INFO  base.BaseTest - Launching chrome for: testValidLogin
+2026-05-28 13:17:00 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:17:00 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:17:01 [main] INFO  base.BaseTest - Browser ready for: testValidLogin
+2026-05-28 13:17:01 [main] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-28 13:17:31 [main] WARN  listeners.TestNGListener - Test skipped: testValidLogin
+2026-05-28 13:17:32 [main] INFO  base.BaseTest - Browser closed: testValidLogin
+2026-05-28 13:17:32 [main] INFO  base.BaseTest - Launching chrome for: testValidLogin
+2026-05-28 13:17:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:17:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:17:33 [main] INFO  base.BaseTest - Browser ready for: testValidLogin
+2026-05-28 13:17:33 [main] INFO  listeners.TestNGListener - Test started: testValidLogin

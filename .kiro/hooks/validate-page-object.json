@@ -1,0 +1,13 @@
+{
+  "name": "Validate Page Object Structure",
+  "version": "1.0.0",
+  "description": "When a new page object is created, verify it follows POM standards: extends BasePage, uses CSS locators, no Thread.sleep(), no test logic",
+  "when": {
+    "type": "fileCreated",
+    "patterns": ["src/test/java/pages/**/*.java"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new Page Object file was just created. Please verify it follows the framework standards:\n1. Class extends BasePage\n2. Constructor accepts WebDriver and calls super(driver)\n3. All locators are private final By fields using CSS selectors\n4. No Thread.sleep() calls anywhere\n5. No test assertions or test logic inside the page object\n6. All wait calls use waitForVisible(), waitForClickable(), waitForPageLoad(), or waitForAngular() from BasePage\nIf any violations are found, fix them immediately."
+  }
+}

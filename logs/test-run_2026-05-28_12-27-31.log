@@ -1,0 +1,273 @@
+2026-05-28 12:27:32 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [C:\Users\singh.narayanmanoj\Desktop\KIRO_POC\testng.xml] otherwise TestNG may fail or not work as expected.
+2026-05-28 12:27:32 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 12:27:32 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 12:27:32 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 12:27:32 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 12:27:32 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 12:27:32 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\singh.narayanmanoj\Desktop\KIRO_POC\testng.xml
+
+2026-05-28 12:27:32 [main] INFO  base.BaseTest - Test suite started — ExtentReporter initialized
+2026-05-28 12:27:32 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testSearchExistingProduct
+2026-05-28 12:27:32 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testInvalidLogin
+2026-05-28 12:27:32 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testClickSearchResult
+2026-05-28 12:27:32 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testValidLogin
+2026-05-28 12:27:33 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:33 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:33 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:33 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:33 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:33 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:33 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:33 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:35 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testSearchExistingProduct
+2026-05-28 12:27:35 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 12:27:35 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testClickSearchResult
+2026-05-28 12:27:35 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-28 12:27:47 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testClickSearchResult
+2026-05-28 12:27:48 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testClickSearchResult
+2026-05-28 12:27:48 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testClickSearchResult
+2026-05-28 12:27:48 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:48 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:48 [TestNG-test-All Tests-1] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-28 12:27:48 [TestNG-test-All Tests-2] WARN  listeners.TestNGListener - Test skipped: testValidLogin
+2026-05-28 12:27:48 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testValidLogin
+2026-05-28 12:27:48 [TestNG-test-All Tests-1] INFO  base.BaseTest - Browser closed after test: testInvalidLogin
+2026-05-28 12:27:48 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testInvalidLogin
+2026-05-28 12:27:48 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:48 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:48 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:48 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:48 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testSearchExistingProduct
+2026-05-28 12:27:48 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testSearchExistingProduct
+2026-05-28 12:27:48 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testSearchExistingProduct
+2026-05-28 12:27:48 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:27:48 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:27:49 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testClickSearchResult
+2026-05-28 12:27:49 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testSearchExistingProduct
+2026-05-28 12:27:49 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 12:27:50 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-28 12:28:00 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testClickSearchResult
+2026-05-28 12:28:00 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testClickSearchResult
+2026-05-28 12:28:00 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testClickSearchResult
+2026-05-28 12:28:00 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:00 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:00 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testSearchExistingProduct
+2026-05-28 12:28:00 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testSearchExistingProduct
+2026-05-28 12:28:00 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testSearchExistingProduct
+2026-05-28 12:28:00 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:00 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:01 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testClickSearchResult
+2026-05-28 12:28:02 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testSearchExistingProduct
+2026-05-28 12:28:06 [TestNG-test-All Tests-1] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-1] INFO  base.BaseTest - Browser closed after test: testInvalidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testInvalidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:06 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:06 [TestNG-test-All Tests-2] WARN  listeners.TestNGListener - Test skipped: testValidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-2] INFO  base.BaseTest - Browser closed after test: testValidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testValidLogin
+2026-05-28 12:28:06 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:06 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:07 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 12:28:08 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-28 12:28:17 [TestNG-test-All Tests-3] ERROR listeners.TestNGListener - Test failed: testClickSearchResult — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61283}, goog:processID: 24416, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61283/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8f46b8b46e69c1a7396ae9840921633d
+2026-05-28 12:28:17 [TestNG-test-All Tests-3] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testClickSearchResult_20260528_122817.png
+2026-05-28 12:28:18 [TestNG-test-All Tests-3] WARN  utils.ScreenshotUtility - Failed to capture screenshot for test 'testClickSearchResult': screenshots\testClickSearchResult_20260528_122817.png
+2026-05-28 12:28:18 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testClickSearchResult
+2026-05-28 12:28:18 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testSearchNonExistentProduct
+2026-05-28 12:28:18 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:18 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:18 [TestNG-test-All Tests-4] ERROR listeners.TestNGListener - Test failed: testSearchExistingProduct — Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=input#search, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61283}, goog:processID: 24416, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61283/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:28:18 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Could not capture screenshot on failure: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61283}, goog:processID: 24416, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61283/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:28:18 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCategoryDisplaysProducts
+2026-05-28 12:28:18 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:18 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testSearchNonExistentProduct
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testSearchNonExistentProduct
+2026-05-28 12:28:19 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCategoryDisplaysProducts
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testSearchNonExistentProduct
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProductDetailsDisplayed
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:19 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:20 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProductDetailsDisplayed
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] ERROR listeners.TestNGListener - Test failed: testInvalidLogin — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#userName (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57739}, goog:processID: 5692, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57739/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2c5cb62e8caa0b144fffdc4cd7f71322
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testInvalidLogin_20260528_122832.png
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] WARN  utils.ScreenshotUtility - Failed to capture screenshot for test 'testInvalidLogin': screenshots\testInvalidLogin_20260528_122832.png
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] INFO  base.BaseTest - Browser closed after test: testInvalidLogin
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testAddToCartIncrementsCount
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:32 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:32 [TestNG-test-All Tests-2] ERROR listeners.TestNGListener - Test failed: testValidLogin — Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=input#userName, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61526}, goog:processID: 34600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61526/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:28:32 [TestNG-test-All Tests-2] WARN  listeners.TestNGListener - Could not capture screenshot on failure: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61526}, goog:processID: 34600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61526/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:28:32 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testCartDisplaysCorrectItem
+2026-05-28 12:28:32 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:32 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:33 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testAddToCartIncrementsCount
+2026-05-28 12:28:34 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testCartDisplaysCorrectItem
+2026-05-28 12:28:40 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testCategoryDisplaysProducts
+2026-05-28 12:28:40 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCategoryDisplaysProducts
+2026-05-28 12:28:40 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCategoryDisplaysProducts
+2026-05-28 12:28:40 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:40 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:40 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testProductDetailsDisplayed
+2026-05-28 12:28:40 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testProductDetailsDisplayed
+2026-05-28 12:28:40 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProductDetailsDisplayed
+2026-05-28 12:28:40 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:28:40 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:28:41 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCategoryDisplaysProducts
+2026-05-28 12:28:42 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProductDetailsDisplayed
+2026-05-28 12:29:11 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testCategoryDisplaysProducts
+2026-05-28 12:29:11 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCategoryDisplaysProducts
+2026-05-28 12:29:11 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCategoryDisplaysProducts
+2026-05-28 12:29:11 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:11 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:11 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testProductDetailsDisplayed
+2026-05-28 12:29:11 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testProductDetailsDisplayed
+2026-05-28 12:29:11 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProductDetailsDisplayed
+2026-05-28 12:29:11 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:11 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:12 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCategoryDisplaysProducts
+2026-05-28 12:29:12 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProductDetailsDisplayed
+2026-05-28 12:29:23 [TestNG-test-All Tests-4] ERROR listeners.TestNGListener - Test failed: testCategoryDisplaysProducts — Category page should display at least one product expected [false] but found [true]
+2026-05-28 12:29:23 [TestNG-test-All Tests-4] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testCategoryDisplaysProducts_20260528_122923.png
+2026-05-28 12:29:23 [TestNG-test-All Tests-4] WARN  utils.ScreenshotUtility - Failed to capture screenshot for test 'testCategoryDisplaysProducts': screenshots\testCategoryDisplaysProducts_20260528_122923.png
+2026-05-28 12:29:24 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCategoryDisplaysProducts
+2026-05-28 12:29:24 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCheckoutPageLoaded
+2026-05-28 12:29:24 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:24 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:24 [TestNG-test-All Tests-3] ERROR listeners.TestNGListener - Test failed: testProductDetailsDisplayed — Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=input#search, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60032}, goog:processID: 25952, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60032/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:29:24 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Could not capture screenshot on failure: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60032}, goog:processID: 25952, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60032/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:29:24 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:24 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:24 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:25 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCheckoutPageLoaded
+2026-05-28 12:29:25 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:31 [TestNG-test-All Tests-2] WARN  listeners.TestNGListener - Test skipped: testCartDisplaysCorrectItem
+2026-05-28 12:29:31 [TestNG-test-All Tests-1] WARN  listeners.TestNGListener - Test skipped: testAddToCartIncrementsCount
+2026-05-28 12:29:31 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testAddToCartIncrementsCount
+2026-05-28 12:29:31 [TestNG-test-All Tests-2] INFO  base.BaseTest - Browser closed after test: testCartDisplaysCorrectItem
+2026-05-28 12:29:31 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testCartDisplaysCorrectItem
+2026-05-28 12:29:31 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:31 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:31 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:31 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:32 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testAddToCartIncrementsCount
+2026-05-28 12:29:32 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testCartDisplaysCorrectItem
+2026-05-28 12:29:38 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testCheckoutPageLoaded
+2026-05-28 12:29:39 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:40 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCheckoutPageLoaded
+2026-05-28 12:29:40 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCheckoutPageLoaded
+2026-05-28 12:29:40 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:40 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:40 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:40 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:40 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:41 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCheckoutPageLoaded
+2026-05-28 12:29:42 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:46 [TestNG-test-All Tests-2] WARN  listeners.TestNGListener - Test skipped: testCartDisplaysCorrectItem
+2026-05-28 12:29:46 [TestNG-test-All Tests-1] WARN  listeners.TestNGListener - Test skipped: testAddToCartIncrementsCount
+2026-05-28 12:29:46 [TestNG-test-All Tests-1] INFO  base.BaseTest - Launching browser: chrome for test: testAddToCartIncrementsCount
+2026-05-28 12:29:46 [TestNG-test-All Tests-2] INFO  base.BaseTest - Browser closed after test: testCartDisplaysCorrectItem
+2026-05-28 12:29:46 [TestNG-test-All Tests-2] INFO  base.BaseTest - Launching browser: chrome for test: testCartDisplaysCorrectItem
+2026-05-28 12:29:46 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:46 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:46 [TestNG-test-All Tests-1] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:46 [TestNG-test-All Tests-2] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:47 [TestNG-test-All Tests-2] INFO  listeners.TestNGListener - Test started: testCartDisplaysCorrectItem
+2026-05-28 12:29:47 [TestNG-test-All Tests-1] INFO  listeners.TestNGListener - Test started: testAddToCartIncrementsCount
+2026-05-28 12:29:56 [TestNG-test-All Tests-4] WARN  listeners.TestNGListener - Test skipped: testCheckoutPageLoaded
+2026-05-28 12:29:56 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCheckoutPageLoaded
+2026-05-28 12:29:56 [TestNG-test-All Tests-4] INFO  base.BaseTest - Launching browser: chrome for test: testCheckoutPageLoaded
+2026-05-28 12:29:56 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:56 [TestNG-test-All Tests-4] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:56 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Test skipped: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:56 [TestNG-test-All Tests-3] INFO  base.BaseTest - Browser closed after test: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:56 [TestNG-test-All Tests-3] INFO  base.BaseTest - Launching browser: chrome for test: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:29:56 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 12:29:56 [TestNG-test-All Tests-3] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 12:29:57 [TestNG-test-All Tests-4] INFO  listeners.TestNGListener - Test started: testCheckoutPageLoaded
+2026-05-28 12:29:58 [TestNG-test-All Tests-3] INFO  listeners.TestNGListener - Test started: testProceedToCheckoutShowsOrderSummary
+2026-05-28 12:30:02 [TestNG-test-All Tests-2] ERROR listeners.TestNGListener - Test failed: testCartDisplaysCorrectItem — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62365}, goog:processID: 36560, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62365/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a2d7247990c6040f2770d6fbf34d2e1f
+2026-05-28 12:30:02 [TestNG-test-All Tests-2] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testCartDisplaysCorrectItem_20260528_123002.png
+2026-05-28 12:30:02 [TestNG-test-All Tests-2] WARN  utils.ScreenshotUtility - Failed to capture screenshot for test 'testCartDisplaysCorrectItem': screenshots\testCartDisplaysCorrectItem_20260528_123002.png
+2026-05-28 12:30:02 [TestNG-test-All Tests-2] INFO  base.BaseTest - Browser closed after test: testCartDisplaysCorrectItem
+2026-05-28 12:30:02 [TestNG-test-All Tests-1] ERROR listeners.TestNGListener - Test failed: testAddToCartIncrementsCount — Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=input#search, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62365}, goog:processID: 36560, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62365/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:30:02 [TestNG-test-All Tests-1] WARN  listeners.TestNGListener - Could not capture screenshot on failure: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62365}, goog:processID: 36560, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62365/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:30:13 [TestNG-test-All Tests-4] ERROR listeners.TestNGListener - Test failed: testCheckoutPageLoaded — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62349}, goog:processID: 29812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62349/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86945ece85f91f55eb34bfd9c8243554
+2026-05-28 12:30:13 [TestNG-test-All Tests-4] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testCheckoutPageLoaded_20260528_123013.png
+2026-05-28 12:30:13 [TestNG-test-All Tests-4] WARN  utils.ScreenshotUtility - Failed to capture screenshot for test 'testCheckoutPageLoaded': screenshots\testCheckoutPageLoaded_20260528_123013.png
+2026-05-28 12:30:14 [TestNG-test-All Tests-4] INFO  base.BaseTest - Browser closed after test: testCheckoutPageLoaded
+2026-05-28 12:30:14 [TestNG-test-All Tests-3] ERROR listeners.TestNGListener - Test failed: testProceedToCheckoutShowsOrderSummary — Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, findElement {value=input#search, using=css selector}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62349}, goog:processID: 29812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62349/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:30:14 [TestNG-test-All Tests-3] WARN  listeners.TestNGListener - Could not capture screenshot on failure: Session ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [null, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62349}, goog:processID: 29812, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62349/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+2026-05-28 12:30:15 [main] INFO  base.BaseTest - Test suite finished — ExtentReporter flushed

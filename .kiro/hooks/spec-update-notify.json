@@ -1,0 +1,13 @@
+{
+  "name": "Spec Update — Review Impact",
+  "version": "1.0.0",
+  "description": "When a spec document is edited, identify which page objects and test classes are impacted and prompt the developer to review them",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [".kiro/specs/ai-ecommerce-automation-framework/*.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A spec document in .kiro/specs/ai-ecommerce-automation-framework/ was just updated. Please:\n1. Identify which requirements or design decisions changed\n2. List the Page Object classes in src/test/java/pages/ that may be impacted\n3. List the test classes in src/test/java/tests/ that may need updating\n4. Check if testdata/testdata.json needs new or updated keys\n5. Summarise the changes needed in a short bullet list for the developer to review"
+  }
+}

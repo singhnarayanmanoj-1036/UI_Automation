@@ -1,0 +1,15 @@
+2026-05-28 13:30:26 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-28 13:30:26 [main] INFO  base.BaseTest - Cleared 0 screenshot(s) from previous run
+2026-05-28 13:30:27 [main] INFO  base.BaseTest - Test suite started
+2026-05-28 13:30:27 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-28 13:30:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:30:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:30:30 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-28 13:30:30 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-28 13:30:51 [main] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-28 13:30:53 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-28 13:30:53 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-28 13:30:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-28 13:30:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-28 13:30:54 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-28 13:30:54 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin

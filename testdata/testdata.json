@@ -1,0 +1,10 @@
+{
+  "validUsername": "admin",
+  "validPassword": "admin1234",
+  "invalidUsername": "invalid_user_xyz_123",
+  "invalidPassword": "wrong_pass_xyz_123",
+  "searchTermExisting": "hp",
+  "searchTermNonExistent": "xyznonexistentproduct999abc",
+  "productName": "HP ENVY",
+  "categoryName": "Laptops"
+}
