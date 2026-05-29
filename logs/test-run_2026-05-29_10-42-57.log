@@ -1,0 +1,23 @@
+2026-05-29 10:42:58 [main] INFO  base.BaseTest - Cleared 3 screenshot(s) from previous run
+2026-05-29 10:42:58 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 10:42:58 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:42:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:42:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:43:01 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:43:01 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:43:37 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageHasVideoThumbnails
+2026-05-29 10:43:38 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:43:38 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:43:38 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:43:38 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:43:39 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:43:39 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:44:17 [main] ERROR listeners.TestNGListener - Test failed: testHomePageHasVideoThumbnails — Home page should display at least one video thumbnail expected [true] but found [false]
+2026-05-29 10:44:17 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_104417.png
+2026-05-29 10:44:17 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_104417.png
+2026-05-29 10:44:18 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:44:18 [main] INFO  base.BaseTest - Launching chrome for: testHomePageTitle
+2026-05-29 10:44:18 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:44:18 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:44:20 [main] INFO  base.BaseTest - Browser ready for: testHomePageTitle
+2026-05-29 10:44:20 [main] INFO  listeners.TestNGListener - Test started: testHomePageTitle

@@ -1,0 +1,75 @@
+2026-05-29 10:35:30 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:35:30 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:35:30 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:35:31 [main] INFO  base.BaseTest - Cleared 30 screenshot(s) from previous run
+2026-05-29 10:35:31 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 10:35:31 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:35:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:35:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:35:35 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:35:35 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:36:12 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageHasVideoThumbnails
+2026-05-29 10:36:13 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:36:13 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:36:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:36:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:36:14 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:36:14 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:36:52 [main] ERROR listeners.TestNGListener - Test failed: testHomePageHasVideoThumbnails — Home page should display at least one video thumbnail expected [true] but found [false]
+2026-05-29 10:36:52 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_103652.png
+2026-05-29 10:36:53 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_103653.png
+2026-05-29 10:36:53 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:36:53 [main] INFO  base.BaseTest - Launching chrome for: testHomePageTitle
+2026-05-29 10:36:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:36:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:36:55 [main] INFO  base.BaseTest - Browser ready for: testHomePageTitle
+2026-05-29 10:36:55 [main] INFO  listeners.TestNGListener - Test started: testHomePageTitle
+2026-05-29 10:37:11 [main] INFO  listeners.TestNGListener - Test passed: testHomePageTitle
+2026-05-29 10:37:12 [main] INFO  base.BaseTest - Browser closed: testHomePageTitle
+2026-05-29 10:37:12 [main] INFO  base.BaseTest - Launching chrome for: testHomePageUrl
+2026-05-29 10:37:12 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:37:12 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:37:13 [main] INFO  base.BaseTest - Browser ready for: testHomePageUrl
+2026-05-29 10:37:13 [main] INFO  listeners.TestNGListener - Test started: testHomePageUrl
+2026-05-29 10:37:27 [main] INFO  listeners.TestNGListener - Test passed: testHomePageUrl
+2026-05-29 10:37:28 [main] INFO  base.BaseTest - Browser closed: testHomePageUrl
+2026-05-29 10:37:28 [main] INFO  base.BaseTest - Launching chrome for: testLogoIsVisible
+2026-05-29 10:37:28 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:37:28 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:37:29 [main] INFO  base.BaseTest - Browser ready for: testLogoIsVisible
+2026-05-29 10:37:29 [main] INFO  listeners.TestNGListener - Test started: testLogoIsVisible
+2026-05-29 10:37:44 [main] INFO  listeners.TestNGListener - Test passed: testLogoIsVisible
+2026-05-29 10:37:45 [main] INFO  base.BaseTest - Browser closed: testLogoIsVisible
+2026-05-29 10:37:45 [main] INFO  base.BaseTest - Launching chrome for: testSearchBoxIsVisible
+2026-05-29 10:37:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:37:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:37:47 [main] INFO  base.BaseTest - Browser ready for: testSearchBoxIsVisible
+2026-05-29 10:37:47 [main] INFO  listeners.TestNGListener - Test started: testSearchBoxIsVisible
+2026-05-29 10:38:02 [main] INFO  listeners.TestNGListener - Test passed: testSearchBoxIsVisible
+2026-05-29 10:38:02 [main] INFO  base.BaseTest - Browser closed: testSearchBoxIsVisible
+2026-05-29 10:38:02 [main] INFO  base.BaseTest - Launching chrome for: testSearchFromResultsPage
+2026-05-29 10:38:02 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:38:02 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:38:03 [main] INFO  base.BaseTest - Browser ready for: testSearchFromResultsPage
+2026-05-29 10:38:03 [main] INFO  listeners.TestNGListener - Test started: testSearchFromResultsPage
+2026-05-29 10:38:22 [main] INFO  listeners.TestNGListener - Test passed: testSearchFromResultsPage
+2026-05-29 10:38:22 [main] INFO  base.BaseTest - Browser closed: testSearchFromResultsPage
+2026-05-29 10:38:22 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsHaveChannelNames
+2026-05-29 10:38:22 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:38:22 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:38:24 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsHaveChannelNames
+2026-05-29 10:38:24 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsHaveChannelNames
+2026-05-29 10:38:44 [main] INFO  listeners.TestNGListener - Test passed: testSearchResultsHaveChannelNames
+2026-05-29 10:38:44 [main] INFO  base.BaseTest - Browser closed: testSearchResultsHaveChannelNames
+2026-05-29 10:38:44 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsPageTitle
+2026-05-29 10:38:44 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:38:44 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:38:45 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsPageTitle
+2026-05-29 10:38:45 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsPageTitle
+2026-05-29 10:39:01 [main] INFO  listeners.TestNGListener - Test passed: testSearchResultsPageTitle
+2026-05-29 10:39:02 [main] INFO  base.BaseTest - Browser closed: testSearchResultsPageTitle
+2026-05-29 10:39:02 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsUrl
+2026-05-29 10:39:02 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:39:02 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:39:03 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsUrl
+2026-05-29 10:39:03 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsUrl

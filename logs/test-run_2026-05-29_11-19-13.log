@@ -1,0 +1,43 @@
+2026-05-29 11:19:14 [main] INFO  base.BaseTest - Cleared 0 screenshot(s) from previous run
+2026-05-29 11:19:14 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 11:19:15 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 11:19:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:19:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:19:17 [main] INFO  base.BaseTest - CDP stealth patch applied
+2026-05-29 11:19:18 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 11:19:18 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 11:19:23 [main] INFO  listeners.TestNGListener - Test passed: testHomePageHasVideoThumbnails
+2026-05-29 11:19:24 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 11:19:24 [main] INFO  base.BaseTest - Launching chrome for: testHomePageTitle
+2026-05-29 11:19:24 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:19:24 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:19:25 [main] INFO  base.BaseTest - CDP stealth patch applied
+2026-05-29 11:19:25 [main] INFO  base.BaseTest - Browser ready for: testHomePageTitle
+2026-05-29 11:19:25 [main] INFO  listeners.TestNGListener - Test started: testHomePageTitle
+2026-05-29 11:19:40 [main] INFO  listeners.TestNGListener - Test passed: testHomePageTitle
+2026-05-29 11:19:41 [main] INFO  base.BaseTest - Browser closed: testHomePageTitle
+2026-05-29 11:19:41 [main] INFO  base.BaseTest - Launching chrome for: testHomePageUrl
+2026-05-29 11:19:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:19:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:19:42 [main] INFO  base.BaseTest - CDP stealth patch applied
+2026-05-29 11:19:43 [main] INFO  base.BaseTest - Browser ready for: testHomePageUrl
+2026-05-29 11:19:43 [main] INFO  listeners.TestNGListener - Test started: testHomePageUrl
+2026-05-29 11:19:58 [main] INFO  listeners.TestNGListener - Test passed: testHomePageUrl
+2026-05-29 11:19:58 [main] INFO  base.BaseTest - Browser closed: testHomePageUrl
+2026-05-29 11:19:58 [main] INFO  base.BaseTest - Launching chrome for: testLogoIsVisible
+2026-05-29 11:19:58 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:19:58 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:20:00 [main] INFO  base.BaseTest - CDP stealth patch applied
+2026-05-29 11:20:00 [main] INFO  base.BaseTest - Browser ready for: testLogoIsVisible
+2026-05-29 11:20:00 [main] INFO  listeners.TestNGListener - Test started: testLogoIsVisible
+2026-05-29 11:20:14 [main] INFO  listeners.TestNGListener - Test passed: testLogoIsVisible
+2026-05-29 11:20:15 [main] INFO  base.BaseTest - Browser closed: testLogoIsVisible
+2026-05-29 11:20:15 [main] INFO  base.BaseTest - Launching chrome for: testSearchBoxIsVisible
+2026-05-29 11:20:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:20:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:20:16 [main] INFO  base.BaseTest - CDP stealth patch applied
+2026-05-29 11:20:16 [main] INFO  base.BaseTest - Browser ready for: testSearchBoxIsVisible
+2026-05-29 11:20:16 [main] INFO  listeners.TestNGListener - Test started: testSearchBoxIsVisible
+2026-05-29 11:20:21 [main] INFO  listeners.TestNGListener - Test passed: testSearchBoxIsVisible
+2026-05-29 11:20:22 [main] INFO  base.BaseTest - Browser closed: testSearchBoxIsVisible
+2026-05-29 11:20:23 [main] INFO  base.BaseTest - Suite finished

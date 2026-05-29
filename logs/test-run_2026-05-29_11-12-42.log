@@ -1,0 +1,28 @@
+2026-05-29 11:12:43 [main] INFO  base.BaseTest - Cleared 0 screenshot(s) from previous run
+2026-05-29 11:12:43 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 11:12:43 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 11:12:44 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:12:44 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:12:46 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 11:12:46 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageHasVideoThumbnails
+2026-05-29 11:12:46 [main] INFO  base.BaseTest - Launching chrome for: testHomePageTitle
+2026-05-29 11:12:46 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:12:46 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:12:47 [main] INFO  listeners.TestNGListener - Test started: testHomePageTitle
+2026-05-29 11:12:47 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageTitle
+2026-05-29 11:12:47 [main] INFO  base.BaseTest - Launching chrome for: testHomePageUrl
+2026-05-29 11:12:47 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:12:47 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:12:48 [main] INFO  listeners.TestNGListener - Test started: testHomePageUrl
+2026-05-29 11:12:48 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageUrl
+2026-05-29 11:12:48 [main] INFO  base.BaseTest - Launching chrome for: testLogoIsVisible
+2026-05-29 11:12:48 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:12:48 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:12:49 [main] INFO  listeners.TestNGListener - Test started: testLogoIsVisible
+2026-05-29 11:12:49 [main] WARN  listeners.TestNGListener - Test skipped: testLogoIsVisible
+2026-05-29 11:12:49 [main] INFO  base.BaseTest - Launching chrome for: testSearchBoxIsVisible
+2026-05-29 11:12:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 11:12:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 11:12:50 [main] INFO  listeners.TestNGListener - Test started: testSearchBoxIsVisible
+2026-05-29 11:12:50 [main] WARN  listeners.TestNGListener - Test skipped: testSearchBoxIsVisible
+2026-05-29 11:12:51 [main] INFO  base.BaseTest - Suite finished

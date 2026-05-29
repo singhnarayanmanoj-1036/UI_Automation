@@ -1,0 +1,47 @@
+2026-05-29 09:59:05 [main] WARN  org.testng.xml.TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [C:\Users\singh.narayanmanoj\Desktop\KIRO_POC\testng.xml] otherwise TestNG may fail or not work as expected.
+2026-05-29 09:59:07 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 09:59:07 [main] INFO  base.BaseTest - Cleared 0 screenshot(s) from previous run
+2026-05-29 09:59:08 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 09:59:08 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-29 09:59:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 09:59:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 09:59:12 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-29 09:59:12 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-29 09:59:48 [main] WARN  listeners.TestNGListener - Test skipped: testInvalidLogin
+2026-05-29 09:59:49 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-29 09:59:49 [main] INFO  base.BaseTest - Launching chrome for: testInvalidLogin
+2026-05-29 09:59:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 09:59:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 09:59:50 [main] INFO  base.BaseTest - Browser ready for: testInvalidLogin
+2026-05-29 09:59:50 [main] INFO  listeners.TestNGListener - Test started: testInvalidLogin
+2026-05-29 10:00:29 [main] ERROR listeners.TestNGListener - Test failed: testInvalidLogin — Expected condition failed: waiting for visibility of element located by By.cssSelector: input[name='username'], input#userName (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52772}, goog:processID: 7924, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52772/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a1479f4a094032ab77973d80496a72b4
+2026-05-29 10:00:29 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testInvalidLogin_20260529_100029.png
+2026-05-29 10:00:30 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testInvalidLogin_20260529_100030.png
+2026-05-29 10:00:31 [main] INFO  base.BaseTest - Browser closed: testInvalidLogin
+2026-05-29 10:00:31 [main] INFO  base.BaseTest - Launching chrome for: testValidLogin
+2026-05-29 10:00:31 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:00:31 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:00:32 [main] INFO  base.BaseTest - Browser ready for: testValidLogin
+2026-05-29 10:00:32 [main] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-29 10:01:12 [main] WARN  listeners.TestNGListener - Test skipped: testValidLogin
+2026-05-29 10:01:13 [main] INFO  base.BaseTest - Browser closed: testValidLogin
+2026-05-29 10:01:13 [main] INFO  base.BaseTest - Launching chrome for: testValidLogin
+2026-05-29 10:01:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:01:13 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:01:14 [main] INFO  base.BaseTest - Browser ready for: testValidLogin
+2026-05-29 10:01:14 [main] INFO  listeners.TestNGListener - Test started: testValidLogin
+2026-05-29 10:01:49 [main] ERROR listeners.TestNGListener - Test failed: testValidLogin — Expected condition failed: waiting for visibility of element located by By.cssSelector: input[name='username'], input#userName (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62251}, goog:processID: 3148, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62251/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 568fc548abfb9b87dd0e216f53716fa9
+2026-05-29 10:01:50 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testValidLogin_20260529_100149.png
+2026-05-29 10:01:51 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testValidLogin_20260529_100151.png
+2026-05-29 10:01:52 [main] INFO  base.BaseTest - Browser closed: testValidLogin
+2026-05-29 10:01:52 [main] INFO  base.BaseTest - Suite finished

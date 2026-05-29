@@ -1,0 +1,328 @@
+2026-05-29 10:09:50 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:09:51 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:09:51 [main] INFO  utils.TestDataProvider - Test data loaded from testdata/testdata.json
+2026-05-29 10:09:51 [main] INFO  base.BaseTest - Cleared 6 screenshot(s) from previous run
+2026-05-29 10:09:51 [main] INFO  base.BaseTest - Test suite started
+2026-05-29 10:09:51 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:09:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:09:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:09:54 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:09:55 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:10:20 [main] WARN  listeners.TestNGListener - Test skipped: testHomePageHasVideoThumbnails
+2026-05-29 10:10:20 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:10:20 [main] INFO  base.BaseTest - Launching chrome for: testHomePageHasVideoThumbnails
+2026-05-29 10:10:20 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:10:20 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:10:21 [main] INFO  base.BaseTest - Browser ready for: testHomePageHasVideoThumbnails
+2026-05-29 10:10:21 [main] INFO  listeners.TestNGListener - Test started: testHomePageHasVideoThumbnails
+2026-05-29 10:10:47 [main] ERROR listeners.TestNGListener - Test failed: testHomePageHasVideoThumbnails — Home page should display at least one video thumbnail expected [true] but found [false]
+2026-05-29 10:10:47 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_101047.png
+2026-05-29 10:10:47 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testHomePageHasVideoThumbnails_20260529_101047.png
+2026-05-29 10:10:48 [main] INFO  base.BaseTest - Browser closed: testHomePageHasVideoThumbnails
+2026-05-29 10:10:48 [main] INFO  base.BaseTest - Launching chrome for: testHomePageTitle
+2026-05-29 10:10:48 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:10:48 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:10:49 [main] INFO  base.BaseTest - Browser ready for: testHomePageTitle
+2026-05-29 10:10:49 [main] INFO  listeners.TestNGListener - Test started: testHomePageTitle
+2026-05-29 10:10:58 [main] INFO  listeners.TestNGListener - Test passed: testHomePageTitle
+2026-05-29 10:10:58 [main] INFO  base.BaseTest - Browser closed: testHomePageTitle
+2026-05-29 10:10:58 [main] INFO  base.BaseTest - Launching chrome for: testHomePageUrl
+2026-05-29 10:10:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:10:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:11:00 [main] INFO  base.BaseTest - Browser ready for: testHomePageUrl
+2026-05-29 10:11:00 [main] INFO  listeners.TestNGListener - Test started: testHomePageUrl
+2026-05-29 10:11:08 [main] INFO  listeners.TestNGListener - Test passed: testHomePageUrl
+2026-05-29 10:11:09 [main] INFO  base.BaseTest - Browser closed: testHomePageUrl
+2026-05-29 10:11:09 [main] INFO  base.BaseTest - Launching chrome for: testLogoIsVisible
+2026-05-29 10:11:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:11:09 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:11:10 [main] INFO  base.BaseTest - Browser ready for: testLogoIsVisible
+2026-05-29 10:11:10 [main] INFO  listeners.TestNGListener - Test started: testLogoIsVisible
+2026-05-29 10:11:18 [main] INFO  listeners.TestNGListener - Test passed: testLogoIsVisible
+2026-05-29 10:11:19 [main] INFO  base.BaseTest - Browser closed: testLogoIsVisible
+2026-05-29 10:11:19 [main] INFO  base.BaseTest - Launching chrome for: testSearchBoxIsVisible
+2026-05-29 10:11:19 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:11:19 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:11:20 [main] INFO  base.BaseTest - Browser ready for: testSearchBoxIsVisible
+2026-05-29 10:11:20 [main] INFO  listeners.TestNGListener - Test started: testSearchBoxIsVisible
+2026-05-29 10:11:45 [main] WARN  listeners.TestNGListener - Test skipped: testSearchBoxIsVisible
+2026-05-29 10:11:45 [main] INFO  base.BaseTest - Browser closed: testSearchBoxIsVisible
+2026-05-29 10:11:45 [main] INFO  base.BaseTest - Launching chrome for: testSearchBoxIsVisible
+2026-05-29 10:11:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:11:45 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:11:46 [main] INFO  base.BaseTest - Browser ready for: testSearchBoxIsVisible
+2026-05-29 10:11:46 [main] INFO  listeners.TestNGListener - Test started: testSearchBoxIsVisible
+2026-05-29 10:12:11 [main] ERROR listeners.TestNGListener - Test failed: testSearchBoxIsVisible — Search box should be visible on the home page expected [true] but found [false]
+2026-05-29 10:12:11 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchBoxIsVisible_20260529_101211.png
+2026-05-29 10:12:12 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchBoxIsVisible_20260529_101211.png
+2026-05-29 10:12:12 [main] INFO  base.BaseTest - Browser closed: testSearchBoxIsVisible
+2026-05-29 10:12:12 [main] INFO  base.BaseTest - Launching chrome for: testSearchFromResultsPage
+2026-05-29 10:12:12 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:12:12 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:12:13 [main] INFO  base.BaseTest - Browser ready for: testSearchFromResultsPage
+2026-05-29 10:12:13 [main] INFO  listeners.TestNGListener - Test started: testSearchFromResultsPage
+2026-05-29 10:12:39 [main] WARN  listeners.TestNGListener - Test skipped: testSearchFromResultsPage
+2026-05-29 10:12:39 [main] INFO  base.BaseTest - Browser closed: testSearchFromResultsPage
+2026-05-29 10:12:39 [main] INFO  base.BaseTest - Launching chrome for: testSearchFromResultsPage
+2026-05-29 10:12:39 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:12:39 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:12:40 [main] INFO  base.BaseTest - Browser ready for: testSearchFromResultsPage
+2026-05-29 10:12:40 [main] INFO  listeners.TestNGListener - Test started: testSearchFromResultsPage
+2026-05-29 10:13:05 [main] ERROR listeners.TestNGListener - Test failed: testSearchFromResultsPage — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57065}, goog:processID: 2928, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57065/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6373ed654617ddc27b1dfdaac5c60d82
+2026-05-29 10:13:05 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchFromResultsPage_20260529_101305.png
+2026-05-29 10:13:06 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchFromResultsPage_20260529_101305.png
+2026-05-29 10:13:06 [main] INFO  base.BaseTest - Browser closed: testSearchFromResultsPage
+2026-05-29 10:13:06 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsHaveChannelNames
+2026-05-29 10:13:06 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:13:06 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:13:07 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsHaveChannelNames
+2026-05-29 10:13:07 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsHaveChannelNames
+2026-05-29 10:13:32 [main] WARN  listeners.TestNGListener - Test skipped: testSearchResultsHaveChannelNames
+2026-05-29 10:13:33 [main] INFO  base.BaseTest - Browser closed: testSearchResultsHaveChannelNames
+2026-05-29 10:13:33 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsHaveChannelNames
+2026-05-29 10:13:33 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:13:33 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:13:34 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsHaveChannelNames
+2026-05-29 10:13:34 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsHaveChannelNames
+2026-05-29 10:13:59 [main] ERROR listeners.TestNGListener - Test failed: testSearchResultsHaveChannelNames — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50953}, goog:processID: 4248, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50953/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b5ee752cad3889c36d7bf487d0dce99e
+2026-05-29 10:13:59 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsHaveChannelNames_20260529_101359.png
+2026-05-29 10:14:00 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsHaveChannelNames_20260529_101359.png
+2026-05-29 10:14:00 [main] INFO  base.BaseTest - Browser closed: testSearchResultsHaveChannelNames
+2026-05-29 10:14:00 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsPageTitle
+2026-05-29 10:14:00 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:14:00 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:14:01 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsPageTitle
+2026-05-29 10:14:01 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsPageTitle
+2026-05-29 10:14:26 [main] WARN  listeners.TestNGListener - Test skipped: testSearchResultsPageTitle
+2026-05-29 10:14:26 [main] INFO  base.BaseTest - Browser closed: testSearchResultsPageTitle
+2026-05-29 10:14:26 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsPageTitle
+2026-05-29 10:14:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:14:27 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:14:28 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsPageTitle
+2026-05-29 10:14:28 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsPageTitle
+2026-05-29 10:14:54 [main] ERROR listeners.TestNGListener - Test failed: testSearchResultsPageTitle — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56554}, goog:processID: 184, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56554/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fab3d83afc951985511d9e31ffffe20b
+2026-05-29 10:14:54 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsPageTitle_20260529_101454.png
+2026-05-29 10:14:54 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsPageTitle_20260529_101454.png
+2026-05-29 10:14:55 [main] INFO  base.BaseTest - Browser closed: testSearchResultsPageTitle
+2026-05-29 10:14:55 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsUrl
+2026-05-29 10:14:55 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:14:55 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:14:56 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsUrl
+2026-05-29 10:14:56 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsUrl
+2026-05-29 10:15:21 [main] WARN  listeners.TestNGListener - Test skipped: testSearchResultsUrl
+2026-05-29 10:15:21 [main] INFO  base.BaseTest - Browser closed: testSearchResultsUrl
+2026-05-29 10:15:21 [main] INFO  base.BaseTest - Launching chrome for: testSearchResultsUrl
+2026-05-29 10:15:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:15:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:15:22 [main] INFO  base.BaseTest - Browser ready for: testSearchResultsUrl
+2026-05-29 10:15:22 [main] INFO  listeners.TestNGListener - Test started: testSearchResultsUrl
+2026-05-29 10:15:49 [main] ERROR listeners.TestNGListener - Test failed: testSearchResultsUrl — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58451}, goog:processID: 16172, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58451/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5af4528e772e3db85ac5eeb4b5575b1a
+2026-05-29 10:15:49 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsUrl_20260529_101549.png
+2026-05-29 10:15:49 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testSearchResultsUrl_20260529_101549.png
+2026-05-29 10:15:49 [main] INFO  base.BaseTest - Browser closed: testSearchResultsUrl
+2026-05-29 10:15:49 [main] INFO  base.BaseTest - Launching chrome for: testSearchReturnsResults
+2026-05-29 10:15:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:15:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:15:51 [main] INFO  listeners.TestNGListener - Test started: testSearchReturnsResults
+2026-05-29 10:15:51 [main] WARN  listeners.TestNGListener - Test skipped: testSearchReturnsResults
+2026-05-29 10:15:52 [main] INFO  base.BaseTest - Browser closed: testSearchReturnsResults
+2026-05-29 10:15:52 [main] INFO  base.BaseTest - Launching chrome for: testChannelNameIsVisible
+2026-05-29 10:15:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:15:52 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:15:53 [main] INFO  base.BaseTest - Browser ready for: testChannelNameIsVisible
+2026-05-29 10:15:53 [main] INFO  listeners.TestNGListener - Test started: testChannelNameIsVisible
+2026-05-29 10:16:18 [main] WARN  listeners.TestNGListener - Test skipped: testChannelNameIsVisible
+2026-05-29 10:16:19 [main] INFO  base.BaseTest - Browser closed: testChannelNameIsVisible
+2026-05-29 10:16:19 [main] INFO  base.BaseTest - Launching chrome for: testChannelNameIsVisible
+2026-05-29 10:16:19 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:16:19 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:16:20 [main] INFO  base.BaseTest - Browser ready for: testChannelNameIsVisible
+2026-05-29 10:16:20 [main] INFO  listeners.TestNGListener - Test started: testChannelNameIsVisible
+2026-05-29 10:16:46 [main] ERROR listeners.TestNGListener - Test failed: testChannelNameIsVisible — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63610}, goog:processID: 11420, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63610/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 207e8ddc115d23cd67ae79ba3b2734ea
+2026-05-29 10:16:46 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testChannelNameIsVisible_20260529_101646.png
+2026-05-29 10:16:46 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testChannelNameIsVisible_20260529_101646.png
+2026-05-29 10:16:46 [main] INFO  base.BaseTest - Browser closed: testChannelNameIsVisible
+2026-05-29 10:16:47 [main] INFO  base.BaseTest - Launching chrome for: testRelatedVideosAreShown
+2026-05-29 10:16:47 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:16:47 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:16:48 [main] INFO  base.BaseTest - Browser ready for: testRelatedVideosAreShown
+2026-05-29 10:16:48 [main] INFO  listeners.TestNGListener - Test started: testRelatedVideosAreShown
+2026-05-29 10:17:14 [main] WARN  listeners.TestNGListener - Test skipped: testRelatedVideosAreShown
+2026-05-29 10:17:14 [main] INFO  base.BaseTest - Browser closed: testRelatedVideosAreShown
+2026-05-29 10:17:14 [main] INFO  base.BaseTest - Launching chrome for: testRelatedVideosAreShown
+2026-05-29 10:17:14 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:17:14 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:17:15 [main] INFO  base.BaseTest - Browser ready for: testRelatedVideosAreShown
+2026-05-29 10:17:15 [main] INFO  listeners.TestNGListener - Test started: testRelatedVideosAreShown
+2026-05-29 10:17:40 [main] ERROR listeners.TestNGListener - Test failed: testRelatedVideosAreShown — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52143}, goog:processID: 19648, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52143/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bcae6e8cb75040a9a8dd250ab4e28a6f
+2026-05-29 10:17:40 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testRelatedVideosAreShown_20260529_101740.png
+2026-05-29 10:17:40 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testRelatedVideosAreShown_20260529_101740.png
+2026-05-29 10:17:41 [main] INFO  base.BaseTest - Browser closed: testRelatedVideosAreShown
+2026-05-29 10:17:41 [main] INFO  base.BaseTest - Launching chrome for: testVideoPageUrl
+2026-05-29 10:17:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:17:41 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:17:42 [main] INFO  base.BaseTest - Browser ready for: testVideoPageUrl
+2026-05-29 10:17:42 [main] INFO  listeners.TestNGListener - Test started: testVideoPageUrl
+2026-05-29 10:18:07 [main] WARN  listeners.TestNGListener - Test skipped: testVideoPageUrl
+2026-05-29 10:18:07 [main] INFO  base.BaseTest - Browser closed: testVideoPageUrl
+2026-05-29 10:18:07 [main] INFO  base.BaseTest - Launching chrome for: testVideoPageUrl
+2026-05-29 10:18:07 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:18:07 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:18:09 [main] INFO  base.BaseTest - Browser ready for: testVideoPageUrl
+2026-05-29 10:18:09 [main] INFO  listeners.TestNGListener - Test started: testVideoPageUrl
+2026-05-29 10:18:36 [main] ERROR listeners.TestNGListener - Test failed: testVideoPageUrl — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58661}, goog:processID: 6376, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58661/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3088b8d6a19b0669bbdebaf60d3850eb
+2026-05-29 10:18:36 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoPageUrl_20260529_101836.png
+2026-05-29 10:18:36 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoPageUrl_20260529_101836.png
+2026-05-29 10:18:37 [main] INFO  base.BaseTest - Browser closed: testVideoPageUrl
+2026-05-29 10:18:37 [main] INFO  base.BaseTest - Launching chrome for: testVideoPlayerIsVisible
+2026-05-29 10:18:37 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:18:37 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:18:38 [main] INFO  base.BaseTest - Browser ready for: testVideoPlayerIsVisible
+2026-05-29 10:18:38 [main] INFO  listeners.TestNGListener - Test started: testVideoPlayerIsVisible
+2026-05-29 10:19:04 [main] WARN  listeners.TestNGListener - Test skipped: testVideoPlayerIsVisible
+2026-05-29 10:19:04 [main] INFO  base.BaseTest - Browser closed: testVideoPlayerIsVisible
+2026-05-29 10:19:04 [main] INFO  base.BaseTest - Launching chrome for: testVideoPlayerIsVisible
+2026-05-29 10:19:04 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:19:04 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:19:05 [main] INFO  base.BaseTest - Browser ready for: testVideoPlayerIsVisible
+2026-05-29 10:19:05 [main] INFO  listeners.TestNGListener - Test started: testVideoPlayerIsVisible
+2026-05-29 10:19:31 [main] ERROR listeners.TestNGListener - Test failed: testVideoPlayerIsVisible — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61783}, goog:processID: 2292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61783/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cf149f7322a9873e99e187bd89554b9
+2026-05-29 10:19:31 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoPlayerIsVisible_20260529_101931.png
+2026-05-29 10:19:31 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoPlayerIsVisible_20260529_101931.png
+2026-05-29 10:19:32 [main] INFO  base.BaseTest - Browser closed: testVideoPlayerIsVisible
+2026-05-29 10:19:32 [main] INFO  base.BaseTest - Launching chrome for: testVideoTitleIsVisible
+2026-05-29 10:19:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:19:32 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:19:33 [main] INFO  base.BaseTest - Browser ready for: testVideoTitleIsVisible
+2026-05-29 10:19:33 [main] INFO  listeners.TestNGListener - Test started: testVideoTitleIsVisible
+2026-05-29 10:19:58 [main] WARN  listeners.TestNGListener - Test skipped: testVideoTitleIsVisible
+2026-05-29 10:19:59 [main] INFO  base.BaseTest - Browser closed: testVideoTitleIsVisible
+2026-05-29 10:19:59 [main] INFO  base.BaseTest - Launching chrome for: testVideoTitleIsVisible
+2026-05-29 10:19:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:19:59 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:20:00 [main] INFO  base.BaseTest - Browser ready for: testVideoTitleIsVisible
+2026-05-29 10:20:00 [main] INFO  listeners.TestNGListener - Test started: testVideoTitleIsVisible
+2026-05-29 10:20:25 [main] ERROR listeners.TestNGListener - Test failed: testVideoTitleIsVisible — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59043}, goog:processID: 10176, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59043/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b4214896c92906fdf70728545ed0fea0
+2026-05-29 10:20:26 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoTitleIsVisible_20260529_102025.png
+2026-05-29 10:20:26 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testVideoTitleIsVisible_20260529_102026.png
+2026-05-29 10:20:26 [main] INFO  base.BaseTest - Browser closed: testVideoTitleIsVisible
+2026-05-29 10:20:26 [main] INFO  base.BaseTest - Launching chrome for: testBackFromSearchResultsToHome
+2026-05-29 10:20:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:20:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:20:28 [main] INFO  base.BaseTest - Browser ready for: testBackFromSearchResultsToHome
+2026-05-29 10:20:28 [main] INFO  listeners.TestNGListener - Test started: testBackFromSearchResultsToHome
+2026-05-29 10:20:53 [main] WARN  listeners.TestNGListener - Test skipped: testBackFromSearchResultsToHome
+2026-05-29 10:20:53 [main] INFO  base.BaseTest - Browser closed: testBackFromSearchResultsToHome
+2026-05-29 10:20:53 [main] INFO  base.BaseTest - Launching chrome for: testBackFromSearchResultsToHome
+2026-05-29 10:20:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:20:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:20:54 [main] INFO  base.BaseTest - Browser ready for: testBackFromSearchResultsToHome
+2026-05-29 10:20:54 [main] INFO  listeners.TestNGListener - Test started: testBackFromSearchResultsToHome
+2026-05-29 10:21:20 [main] ERROR listeners.TestNGListener - Test failed: testBackFromSearchResultsToHome — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58107}, goog:processID: 14600, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58107/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6886e1b985b77cedf57691f2072ce3b6
+2026-05-29 10:21:20 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testBackFromSearchResultsToHome_20260529_102120.png
+2026-05-29 10:21:21 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testBackFromSearchResultsToHome_20260529_102121.png
+2026-05-29 10:21:21 [main] INFO  base.BaseTest - Browser closed: testBackFromSearchResultsToHome
+2026-05-29 10:21:21 [main] INFO  base.BaseTest - Launching chrome for: testBackFromVideoToSearchResults
+2026-05-29 10:21:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:21:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:21:22 [main] INFO  base.BaseTest - Browser ready for: testBackFromVideoToSearchResults
+2026-05-29 10:21:22 [main] INFO  listeners.TestNGListener - Test started: testBackFromVideoToSearchResults
+2026-05-29 10:21:48 [main] WARN  listeners.TestNGListener - Test skipped: testBackFromVideoToSearchResults
+2026-05-29 10:21:49 [main] INFO  base.BaseTest - Browser closed: testBackFromVideoToSearchResults
+2026-05-29 10:21:49 [main] INFO  base.BaseTest - Launching chrome for: testBackFromVideoToSearchResults
+2026-05-29 10:21:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:21:49 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:21:50 [main] INFO  base.BaseTest - Browser ready for: testBackFromVideoToSearchResults
+2026-05-29 10:21:50 [main] INFO  listeners.TestNGListener - Test started: testBackFromVideoToSearchResults
+2026-05-29 10:22:15 [main] ERROR listeners.TestNGListener - Test failed: testBackFromVideoToSearchResults — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56412}, goog:processID: 2832, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56412/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d7e91ec805a5f5c117e0b80c488a2c9
+2026-05-29 10:22:15 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testBackFromVideoToSearchResults_20260529_102215.png
+2026-05-29 10:22:15 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testBackFromVideoToSearchResults_20260529_102215.png
+2026-05-29 10:22:15 [main] INFO  base.BaseTest - Browser closed: testBackFromVideoToSearchResults
+2026-05-29 10:22:15 [main] INFO  base.BaseTest - Launching chrome for: testDirectNavigationToHome
+2026-05-29 10:22:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:22:15 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:22:16 [main] INFO  base.BaseTest - Browser ready for: testDirectNavigationToHome
+2026-05-29 10:22:17 [main] INFO  listeners.TestNGListener - Test started: testDirectNavigationToHome
+2026-05-29 10:22:25 [main] INFO  listeners.TestNGListener - Test passed: testDirectNavigationToHome
+2026-05-29 10:22:26 [main] INFO  base.BaseTest - Browser closed: testDirectNavigationToHome
+2026-05-29 10:22:26 [main] INFO  base.BaseTest - Launching chrome for: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:22:26 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:22:27 [main] INFO  base.BaseTest - Browser ready for: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:27 [main] INFO  listeners.TestNGListener - Test started: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:52 [main] WARN  listeners.TestNGListener - Test skipped: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:53 [main] INFO  base.BaseTest - Browser closed: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:53 [main] INFO  base.BaseTest - Launching chrome for: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:22:53 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:22:54 [main] INFO  base.BaseTest - Browser ready for: testPageTitleUpdatesAfterSearch
+2026-05-29 10:22:54 [main] INFO  listeners.TestNGListener - Test started: testPageTitleUpdatesAfterSearch
+2026-05-29 10:23:20 [main] ERROR listeners.TestNGListener - Test failed: testPageTitleUpdatesAfterSearch — Expected condition failed: waiting for visibility of element located by By.cssSelector: input#search (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '25.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.216, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\SINGH~1.NAR\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64904}, goog:processID: 12940, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64904/devtoo..., se:cdpVersion: 148.0.7778.216, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4bb453d0624107e1ebffb84f867b455f
+2026-05-29 10:23:20 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testPageTitleUpdatesAfterSearch_20260529_102320.png
+2026-05-29 10:23:20 [main] INFO  utils.ScreenshotUtility - Screenshot saved: screenshots/testPageTitleUpdatesAfterSearch_20260529_102320.png
+2026-05-29 10:23:21 [main] INFO  base.BaseTest - Browser closed: testPageTitleUpdatesAfterSearch
+2026-05-29 10:23:21 [main] INFO  base.BaseTest - Launching chrome for: testSearchThenOpenVideoChangesUrl
+2026-05-29 10:23:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 148.0.7778.178 (resolved driver for Chrome 148)
+2026-05-29 10:23:21 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\singh.narayanmanoj\.cache\selenium\chromedriver\win64\148.0.7778.178\chromedriver.exe
+2026-05-29 10:23:22 [main] INFO  base.BaseTest - Browser ready for: testSearchThenOpenVideoChangesUrl
+2026-05-29 10:23:22 [main] INFO  listeners.TestNGListener - Test started: testSearchThenOpenVideoChangesUrl

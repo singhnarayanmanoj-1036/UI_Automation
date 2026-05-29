@@ -1,35 +1,34 @@
 # Design Document
 
-## AI-Driven Ecommerce Automation Framework
+## YouTube UI Automation Framework
 
 ---
 
 ## Overview
 
-This document describes the technical design for the AI-Driven Ecommerce Automation Framework targeting the Advantage Online Shopping application (https://advantageonlineshopping.com). The framework is built with **Java + Selenium WebDriver**, **TestNG**, and the **Page Object Model (POM)** design pattern, and integrates with Kiro's AI-assisted engineering capabilities (Spec Mode, Steering, Hooks) to accelerate test development and enforce coding standards.
+This document describes the technical design for the YouTube UI Automation Framework targeting [https://www.youtube.com](https://www.youtube.com). The framework is built with **Java 11 + Selenium WebDriver 4.x**, **TestNG 7.x**, and the **Page Object Model (POM)** design pattern, and integrates with Kiro's AI-assisted engineering capabilities (Spec Mode, Steering, Hooks) to enforce coding standards and keep documentation in sync.
 
 ### Goals
 
-- Provide a scalable, maintainable UI automation framework for the AUT.
+- Provide a stable, demo-ready UI automation framework for YouTube's core user flows.
 - Enforce separation of concerns between page interaction logic (Page Objects) and test logic (Test Classes).
-- Support parallel execution, data-driven testing, retry logic, and rich HTML reporting.
-- Integrate seamlessly with Jenkins CI/CD pipelines.
-- Leverage Kiro Steering and Hooks to keep AI-generated code consistent with framework conventions.
+- Support suite filtering (smoke/regression), retry logic, and rich HTML reporting.
+- Keep all test data externalized — no hardcoded values in test or page classes.
 
 ### Technology Stack
 
 | Concern | Technology |
 |---|---|
-| Language | Java 11+ |
+| Language | Java 11 |
 | Browser Automation | Selenium WebDriver 4.x |
 | Driver Management | WebDriverManager (io.github.bonigarcia) |
 | Test Framework | TestNG 7.x |
 | Build Tool | Maven |
-| Reporting | ExtentReports 5.x |
+| Reporting | ExtentReports 5.x + Allure 2.x |
 | Logging | Log4j2 |
-| Test Data | JSON / `.properties` files |
-| CI/CD | Jenkins (Declarative Pipeline) |
-| AI Assistance | Kiro (Spec Mode, Steering, Hooks) |
+| Test Data | JSON + `.properties` files |
+| Property-Based Testing | jqwik 1.8.1 |
+| Mocking | Mockito 5.11.0 |
 
 ### Design Principles
 
@@ -38,7 +37,8 @@ This document describes the technical design for the AI-Driven Ecommerce Automat
 3. **CSS-First Locators** — CSS selectors preferred; ARIA/ID as fallback; XPath only when no alternative exists.
 4. **Externalized Test Data** — no hardcoded values in test or page classes; all data sourced from `testdata/`.
 5. **Listener-Driven Reporting** — `ITestListener` integration with ExtentReports and screenshot capture.
-6. **Retry on Transient Failure** — `IRetryAnalyzer` retries failed tests up to 2 times.
+6. **Retry on Transient Failure** — `IRetryAnalyzer` retries failed tests once (`MAX_RETRY_COUNT = 1`).
+7. **Cookie Consent Handling** — `HomePage.dismissCookieConsent()` auto-dismisses region-specific dialogs before assertions.
 
 ---
 
@@ -48,35 +48,28 @@ This document describes the technical design for the AI-Driven Ecommerce Automat
 
 ```mermaid
 graph TD
-    subgraph CI["CI/CD Layer"]
-        JK[Jenkins Pipeline]
-        MVN[Maven Surefire Plugin]
-    end
-
     subgraph TestNG["TestNG Execution Layer"]
-        SUITE[TestNG Suite XML<br/>testng.xml / smoke / regression]
-        LISTENER[TestNG Listener<br/>ITestListener]
+        SUITE[testng.xml]
+        LISTENER[TestNGListener<br/>ITestListener]
         RETRY[RetryAnalyzer<br/>IRetryAnalyzer]
     end
 
     subgraph Tests["Test Layer — src/test/java/tests/"]
-        LT[LoginTest]
+        HT[HomeTest]
         ST[SearchTest]
-        PT[ProductTest]
-        CT[CartTest]
-        CHT[CheckoutTest]
+        VT[VideoTest]
+        NT[NavigationTest]
     end
 
     subgraph Base["Base Layer — src/test/java/base/"]
-        BT[BaseTest<br/>@BeforeSuite / @AfterSuite<br/>@BeforeClass / @AfterClass<br/>@BeforeMethod / @AfterMethod]
+        BT[BaseTest<br/>@BeforeSuite / @AfterSuite<br/>@BeforeMethod / @AfterMethod<br/>BASE_URL]
     end
 
     subgraph Pages["Page Layer — src/test/java/pages/"]
-        LP[LoginPage]
-        SP[SearchPage]
-        PP[ProductPage]
-        CAP[CartPage]
-        CHP[CheckoutPage]
+        BP[BasePage<br/>waitForVisible / waitForClickable<br/>waitForPageLoad / waitForAngular]
+        HP[HomePage]
+        SRP[SearchResultsPage]
+        VP[VideoPage]
     end
 
     subgraph Utils["Utility Layer — src/test/java/utils/"]
@@ -93,15 +86,15 @@ graph TD
 
     subgraph Browser["Browser Layer"]
         WD[Selenium WebDriver<br/>ChromeDriver]
-        AUT[AUT — Advantage Online Shopping]
+        AUT[AUT — youtube.com]
     end
 
-    JK --> MVN --> SUITE
     SUITE --> LISTENER
     SUITE --> Tests
     Tests --> BT
     BT --> WDM --> WD --> AUT
     Tests --> Pages
+    Pages --> BP
     Pages --> WD
     LISTENER --> ER
     LISTENER --> SS
@@ -109,11 +102,10 @@ graph TD
     RETRY -.->|retries| Tests
 ```
 
-### Execution Flow Sequence Diagram
+### Execution Flow
 
 ```mermaid
 sequenceDiagram
-    participant Jenkins
     participant Maven
     participant TestNG
     participant BaseTest
@@ -124,12 +116,9 @@ sequenceDiagram
     participant Listener
     participant ExtentReporter
 
-    Jenkins->>Maven: mvn test -DsuiteXmlFile=testng.xml
-    Maven->>TestNG: Load suite XML, discover test classes
-    TestNG->>Listener: onStart(suite)
-    TestNG->>BaseTest: @BeforeSuite — init ExtentReports
-    TestNG->>BaseTest: @BeforeClass — no-op (driver per method)
-    TestNG->>BaseTest: @BeforeMethod — WebDriverMgr.chromedriver().setup()
+    Maven->>TestNG: mvn test (loads testng.xml)
+    TestNG->>BaseTest: @BeforeSuite — init ExtentReporter
+    TestNG->>BaseTest: @BeforeMethod — launch ChromeDriver
     BaseTest->>WebDriverMgr: setup ChromeDriver
     WebDriverMgr->>ChromeDriver: launch Chrome
     ChromeDriver-->>BaseTest: WebDriver instance
@@ -149,8 +138,8 @@ sequenceDiagram
         Listener->>ExtentReporter: log pass
     end
     TestNG->>BaseTest: @AfterMethod — driver.quit()
-    TestNG->>BaseTest: @AfterSuite — flush ExtentReports
-    ExtentReporter-->>Jenkins: reports/index.html artifact
+    TestNG->>BaseTest: @AfterSuite — flush ExtentReporter
+    ExtentReporter-->>Maven: reports/ExtentReport_{timestamp}.html
 ```
 
 ---
@@ -159,145 +148,113 @@ sequenceDiagram
 
 ### BaseTest (`src/test/java/base/BaseTest.java`)
 
-The root class for all test classes. Manages the WebDriver lifecycle via TestNG lifecycle annotations.
+Root class for all test classes. Manages the WebDriver lifecycle and exposes `BASE_URL`.
 
-```java
-public class BaseTest {
-    protected WebDriver driver;
-    protected WebDriverWait wait;
-
-    @BeforeSuite
-    public void initSuite() { /* init ExtentReports */ }
-
-    @BeforeMethod
-    public void setUp(Method method) {
-        // WebDriverManager auto-downloads and configures ChromeDriver
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        // headless flag from config.properties
-        driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        ExtentReporter.startTest(method.getName());
-    }
-
-    @AfterMethod
-    public void tearDown(ITestResult result) {
-        if (result.getStatus() == ITestResult.FAILURE) {
-            ScreenshotUtility.capture(driver, result.getName());
-        }
-        if (driver != null) driver.quit();
-        ExtentReporter.endTest(result);
-    }
-
-    @AfterSuite
-    public void tearDownSuite() { ExtentReporter.flush(); }
-}
-```
-
-**Key responsibilities:**
-- Instantiate `ChromeDriver` via `WebDriverManager` before each test method.
-- Provide a shared `WebDriverWait` instance (10 s default, 15 s for checkout).
-- Delegate screenshot capture and report logging to utilities on failure.
-- Quit the driver after every test method to ensure isolation.
+| Member | Type | Description |
+|---|---|---|
+| `driver` | `WebDriver` | Public — accessible by `TestNGListener` for screenshots. |
+| `wait` | `WebDriverWait` | 15 s default wait shared across test methods. |
+| `BASE_URL` | `static final String` | Loaded from `testdata/config.properties` at class init. Currently `https://www.youtube.com`. |
+| `@BeforeSuite` | `initSuite()` | Clears `screenshots/`, calls `ExtentReporter.init()`. Guard against double-init from multiple listeners. |
+| `@BeforeMethod` | `setUp(Method)` | Reads `browser` system property, launches WebDriver via WebDriverManager, maximizes window. |
+| `@AfterMethod` | `tearDown(ITestResult)` | Captures screenshot on failure, calls `ExtentReporter.endTest()`, quits driver. |
+| `@AfterSuite` | `tearDownSuite()` | Calls `ExtentReporter.flush()`. |
 
 ---
 
-### LoginPage (`src/test/java/pages/LoginPage.java`)
+### BasePage (`src/test/java/pages/BasePage.java`)
 
-Encapsulates all locators and interactions for the AUT login page.
+Shared base for all Page Objects. All page objects extend `BasePage`.
 
 | Method | Signature | Description |
 |---|---|---|
-| `login` | `HomePage login(String username, String password)` | Enters credentials and submits the form. Returns the resulting page. |
-| `getErrorMessage` | `String getErrorMessage()` | Returns the visible error message text after a failed login. |
-| `isOnLoginPage` | `boolean isOnLoginPage()` | Returns `true` if the login form is currently visible. |
+| `waitForVisible` | `WebElement waitForVisible(By)` | Waits up to 15 s for element visibility. |
+| `waitForClickable` | `WebElement waitForClickable(By)` | Waits up to 15 s for element to be clickable. |
+| `waitForVisibleLong` | `WebElement waitForVisibleLong(By)` | Waits up to 25 s — for slow-loading elements. |
+| `waitForPageLoad` | `void waitForPageLoad()` | Waits for `document.readyState == "complete"`. |
+| `waitForAngular` | `void waitForAngular()` | Waits for Angular HTTP calls to settle (no-op on non-Angular pages). |
+| `pause` | `void pause(long millis)` | Safe sleep — use sparingly for render delays only. |
+| `getPageTitle` | `String getPageTitle()` | Returns `driver.getTitle()`. |
+
+---
+
+### HomePage (`src/test/java/pages/HomePage.java`)
+
+Page Object for `https://www.youtube.com`.
+
+| Method | Signature | Description |
+|---|---|---|
+| `open` | `HomePage open(String baseUrl)` | Navigates to YouTube, waits for page load, dismisses cookie consent. |
+| `dismissCookieConsent` | `void dismissCookieConsent()` | Clicks the reject/dismiss button on cookie dialogs (EU regions). No-op if dialog absent. |
+| `getPageTitle` | `String getPageTitle()` | Returns the browser document title. |
+| `isLogoVisible` | `boolean isLogoVisible()` | Returns `true` if the YouTube logo link is visible. |
+| `isSearchBoxVisible` | `boolean isSearchBoxVisible()` | Returns `true` if the search input is visible. |
+| `hasVideoThumbnails` | `boolean hasVideoThumbnails()` | Returns `true` if at least one video thumbnail is present. |
+| `getVideoThumbnailCount` | `int getVideoThumbnailCount()` | Returns the count of visible video thumbnails. |
+| `searchFor` | `SearchResultsPage searchFor(String query)` | Enters query in search box, clicks search button, returns `SearchResultsPage`. |
+| `getCurrentUrl` | `String getCurrentUrl()` | Returns the current browser URL. |
 
 **Locator strategy:**
-- Username field: `By.cssSelector("input[name='username']")`
-- Password field: `By.cssSelector("input[name='password']")`
-- Submit button: `By.cssSelector("button[type='submit']")`
-- Error message: `By.cssSelector(".login-error-message")`
-
-**Wait strategy:** `WebDriverWait.until(ExpectedConditions.visibilityOfElementLocated(...))` with 10 s timeout; throws `TimeoutException` with descriptive message on expiry.
+- Search box: `By.cssSelector("input#search")`
+- Search button: `By.cssSelector("button#search-icon-legacy")`
+- Logo: `By.cssSelector("a#logo, ytd-logo a")`
+- Video thumbnails: `By.cssSelector("ytd-rich-item-renderer, ytd-video-renderer")`
+- Cookie reject button: `By.cssSelector("button[aria-label='Reject all'], button[aria-label*='Reject']")`
 
 ---
 
-### SearchPage (`src/test/java/pages/SearchPage.java`)
+### SearchResultsPage (`src/test/java/pages/SearchResultsPage.java`)
 
-Encapsulates product search interactions.
+Page Object for `/results?search_query=...`.
 
 | Method | Signature | Description |
 |---|---|---|
-| `searchFor` | `SearchResultsPage searchFor(String term)` | Enters the term in the search input and submits. |
-| `getNoResultsMessage` | `String getNoResultsMessage()` | Returns the no-results message text. |
-| `clickResult` | `ProductPage clickResult(String productName)` | Clicks the named result item. |
+| `hasResults` | `boolean hasResults()` | Returns `true` if at least one `ytd-video-renderer` is present. |
+| `getResultCount` | `int getResultCount()` | Returns the count of video result elements. |
+| `getFirstVideoTitle` | `String getFirstVideoTitle()` | Returns the text of the first result's title element. |
+| `firstResultTitleContains` | `boolean firstResultTitleContains(String keyword)` | Case-insensitive check of first result title. |
+| `clickFirstResult` | `VideoPage clickFirstResult()` | Clicks the first video title, returns `VideoPage`. |
+| `getPageTitle` | `String getPageTitle()` | Returns the browser document title. |
+| `getCurrentUrl` | `String getCurrentUrl()` | Returns the current browser URL. |
+| `urlContainsSearchQuery` | `boolean urlContainsSearchQuery(String query)` | Returns `true` if URL contains `search_query` or `results`. |
+| `searchFor` | `SearchResultsPage searchFor(String query)` | Enters new query in search box and submits via ENTER key. |
+| `hasChannelNames` | `boolean hasChannelNames()` | Returns `true` if channel name elements are present in results. |
 
 **Locator strategy:**
-- Search input: `By.cssSelector("input[name='searchTerm']")`
-- Search button: `By.cssSelector("button.search-btn")`
-- Result items: `By.cssSelector(".product-list-item")`
-- No-results message: `By.cssSelector(".no-results-message")`
+- Video results: `By.cssSelector("ytd-video-renderer")`
+- Video titles: `By.cssSelector("ytd-video-renderer #video-title")`
+- Channel names: `By.cssSelector("ytd-video-renderer ytd-channel-name")`
+- Search box: `By.cssSelector("input#search")`
 
 ---
 
-### ProductPage (`src/test/java/pages/ProductPage.java`)
+### VideoPage (`src/test/java/pages/VideoPage.java`)
 
-Encapsulates product category and detail page interactions.
+Page Object for `/watch?v=...`.
 
 | Method | Signature | Description |
 |---|---|---|
-| `selectProduct` | `ProductPage selectProduct(String productName)` | Clicks the named product to open its detail view. |
-| `getProductDetails` | `ProductDetails getProductDetails()` | Returns a `ProductDetails` object with name, price, description, quantity. |
-| `getCategoryProducts` | `List<String> getCategoryProducts()` | Returns names of all products in the current category. |
+| `isVideoPlayerVisible` | `boolean isVideoPlayerVisible()` | Returns `true` if the HTML5 video player element is visible. |
+| `getVideoTitle` | `String getVideoTitle()` | Returns the video title text. |
+| `isVideoTitleVisible` | `boolean isVideoTitleVisible()` | Returns `true` if video title is non-empty. |
+| `getChannelName` | `String getChannelName()` | Returns the channel name text. |
+| `isChannelNameVisible` | `boolean isChannelNameVisible()` | Returns `true` if channel name is non-empty. |
+| `isShareButtonVisible` | `boolean isShareButtonVisible()` | Returns `true` if the Share button is visible. |
+| `hasRelatedVideos` | `boolean hasRelatedVideos()` | Returns `true` if at least one related video is in the sidebar. |
+| `isDescriptionVisible` | `boolean isDescriptionVisible()` | Returns `true` if the description section is visible. |
+| `isProgressBarVisible` | `boolean isProgressBarVisible()` | Returns `true` if the video progress bar is visible. |
+| `isMuteButtonVisible` | `boolean isMuteButtonVisible()` | Returns `true` if the mute button is visible. |
+| `pauseVideo` | `void pauseVideo()` | Pauses the video via JavaScript to prevent autoplay interference. |
+| `urlContainsWatch` | `boolean urlContainsWatch()` | Returns `true` if current URL contains `/watch`. |
+| `getCurrentUrl` | `String getCurrentUrl()` | Returns the current browser URL. |
 
 **Locator strategy:**
-- Product name: `By.cssSelector("h1.product-name")`
-- Product price: `By.cssSelector("span.product-price")`
-- Product description: `By.cssSelector("div.product-description")`
-- Quantity: `By.cssSelector("span.product-quantity")`
-
----
-
-### CartPage (`src/test/java/pages/CartPage.java`)
-
-Encapsulates shopping cart interactions.
-
-| Method | Signature | Description |
-|---|---|---|
-| `addToCart` | `CartPage addToCart(String productName, int quantity)` | Adds the specified product and quantity to the cart. |
-| `getCartItemCount` | `int getCartItemCount()` | Returns the current cart item count from the cart badge. |
-| `getCartItems` | `List<CartItem> getCartItems()` | Returns all items currently in the cart. |
-| `updateQuantity` | `CartPage updateQuantity(String productName, int newQty)` | Updates the quantity for the named cart item. |
-| `getLineItemTotal` | `double getLineItemTotal(String productName)` | Returns the calculated line item total for the named product. |
-
-**Locator strategy:**
-- Cart badge: `By.cssSelector("span.cart-count")`
-- Cart items: `By.cssSelector("div.cart-item")`
-- Add to cart button: `By.cssSelector("button.add-to-cart")`
-- Quantity input: `By.cssSelector("input.item-quantity")`
-
----
-
-### CheckoutPage (`src/test/java/pages/CheckoutPage.java`)
-
-Encapsulates checkout flow interactions.
-
-| Method | Signature | Description |
-|---|---|---|
-| `proceedToCheckout` | `CheckoutPage proceedToCheckout()` | Navigates from the cart to the first checkout step. |
-| `getOrderSummary` | `List<OrderLineItem> getOrderSummary()` | Returns the order summary as a list of `OrderLineItem` objects. |
-| `isCheckoutPageLoaded` | `boolean isCheckoutPageLoaded()` | Returns `true` if all required checkout form sections are visible. |
-
-**Wait strategy:** 15 s `WebDriverWait` for checkout page load; throws `TimeoutException` with descriptive message on expiry.
-
----
-
-### ScreenshotUtility (`src/test/java/utils/ScreenshotUtility.java`)
-
-| Method | Signature | Description |
-|---|---|---|
-| `capture` | `String capture(WebDriver driver, String testName)` | Captures a full-page screenshot, saves to `screenshots/{testName}_{timestamp}.png`, returns the file path. |
+- Video player: `By.cssSelector("video.html5-main-video, #movie_player")`
+- Video title: `By.cssSelector("h1.ytd-watch-metadata yt-formatted-string, h1#title yt-formatted-string")`
+- Channel name: `By.cssSelector("ytd-channel-name #channel-name a, #owner #channel-name a")`
+- Related videos: `By.cssSelector("ytd-compact-video-renderer")`
+- Progress bar: `By.cssSelector("div.ytp-progress-bar")`
+- Mute button: `By.cssSelector("button.ytp-mute-button")`
 
 ---
 
@@ -305,544 +262,207 @@ Encapsulates checkout flow interactions.
 
 | Method | Signature | Description |
 |---|---|---|
-| `getData` | `String getData(String key)` | Returns the string value for the given key from the active data file. Throws `TestDataNotFoundException` if key is absent. |
-| `getDataProvider` | `@DataProvider Object[][] getDataProvider(String dataSetName)` | Returns a 2D array for use with TestNG `@DataProvider`. |
+| `getData` | `String getData(String key)` | Returns value for key; throws `TestDataNotFoundException` if absent. |
+| `hasKey` | `boolean hasKey(String key)` | Returns `true` if key exists in the data map. |
+| `getLoginData` | `@DataProvider Object[][] getLoginData()` | Returns credential pairs for data-driven tests. |
+
+**Data file:** `testdata/testdata.json`
+
+```json
+{
+  "searchTermExisting": "Selenium WebDriver tutorial",
+  "searchTermTrending": "Java programming",
+  "searchTermShorts": "funny cats shorts",
+  "searchTermMusic": "lofi hip hop",
+  "searchTermNonExistent": "xyznonexistentvideo999abcdef123",
+  "expectedHomeTitle": "YouTube",
+  "expectedSearchResultsTitle": "Selenium WebDriver tutorial - YouTube"
+}
+```
 
 ---
 
 ### ExtentReporter (`src/test/java/utils/ExtentReporter.java`)
 
-Thread-safe wrapper around the ExtentReports 5.x API.
+Thread-safe wrapper around ExtentReports 5.x. Uses `ThreadLocal<ExtentTest>` for parallel safety.
 
-| Method | Signature | Description |
-|---|---|---|
-| `startTest` | `void startTest(String testName)` | Creates a new `ExtentTest` node for the current thread. |
-| `log` | `void log(Status status, String message)` | Logs a step with the given status. |
-| `embedScreenshot` | `void embedScreenshot(String screenshotPath)` | Embeds the screenshot at the given path into the current test node. |
-| `endTest` | `void endTest(ITestResult result)` | Marks the test node as pass/fail/skip based on the TestNG result. |
-| `flush` | `void flush()` | Writes the HTML report to `reports/`. |
+| Method | Description |
+|---|---|
+| `init()` | Creates `ExtentReports` instance with `ExtentSparkReporter`. Guard: no-op if already initialized. |
+| `startTest(String)` | Creates a new `ExtentTest` node for the current thread. |
+| `log(Status, String)` | Logs a step with the given status to the current thread's test node. |
+| `embedScreenshot(String)` | Embeds screenshot path into the current test node. |
+| `endTest(ITestResult)` | Marks test node pass/fail/skip based on TestNG result. |
+| `flush()` | Writes HTML report to `reports/ExtentReport_{timestamp}.html`. |
 
 ---
 
 ### TestNGListener (`src/test/java/listeners/TestNGListener.java`)
 
-Implements `ITestListener`. Registered in all TestNG suite XML files via `<listeners>`.
+Implements `ITestListener`. Registered in `testng.xml` via `<listeners>`.
 
 | Callback | Action |
 |---|---|
-| `onTestStart` | Logs test start to ExtentReporter. |
-| `onTestSuccess` | Logs pass status. |
-| `onTestFailure` | Captures screenshot via `ScreenshotUtility`, embeds path in ExtentReporter, logs failure message and stack trace. |
-| `onTestSkipped` | Logs skip status. |
+| `onTestStart` | Logs test start via Log4j2. |
+| `onTestSuccess` | Logs pass to ExtentReporter. |
+| `onTestFailure` | Captures screenshot via `ScreenshotUtility`, embeds in ExtentReporter, attaches to Allure, logs error. |
+| `onTestSkipped` | Logs skip to ExtentReporter. |
 
 ---
 
 ### RetryAnalyzer (`src/test/java/utils/RetryAnalyzer.java`)
 
-Implements `IRetryAnalyzer`. Retries a failed test up to `MAX_RETRY_COUNT = 2` times. Referenced via `@Test(retryAnalyzer = RetryAnalyzer.class)`.
+Implements `IRetryAnalyzer`. `MAX_RETRY_COUNT = 1` — each failing test gets one retry (two total executions). Referenced via `@Test(retryAnalyzer = RetryAnalyzer.class)` on every test method.
 
 ---
 
-## Data Models
+## Test Classes and Coverage
 
-### ProductDetails
+### 20 Test Cases Across 4 Classes
 
-```java
-public class ProductDetails {
-    private String name;
-    private double price;
-    private String description;
-    private int quantity;
-
-    // Constructor, getters, setters, equals(), hashCode(), toString()
-}
-```
-
-| Field | Type | Description |
-|---|---|---|
-| `name` | `String` | Product display name as shown on the AUT. |
-| `price` | `double` | Unit price parsed from the price element text. |
-| `description` | `String` | Full product description text. |
-| `quantity` | `int` | Available stock quantity. |
-
----
-
-### OrderLineItem
-
-```java
-public class OrderLineItem {
-    private String productName;
-    private int quantity;
-    private double unitPrice;
-    private double lineTotal;
-
-    // Constructor, getters, setters, equals(), hashCode(), toString()
-}
-```
-
-| Field | Type | Description |
-|---|---|---|
-| `productName` | `String` | Name of the product in the order. |
-| `quantity` | `int` | Quantity ordered. |
-| `unitPrice` | `double` | Price per unit at time of checkout. |
-| `lineTotal` | `double` | `unitPrice × quantity`, as displayed in the order summary. |
+| Class | Test Method | Groups | Description |
+|---|---|---|---|
+| `HomeTest` | `testHomePageTitle` | smoke, regression | Page title contains "YouTube" |
+| `HomeTest` | `testLogoIsVisible` | smoke, regression | YouTube logo is visible |
+| `HomeTest` | `testSearchBoxIsVisible` | smoke, regression | Search box is visible |
+| `HomeTest` | `testHomePageHasVideoThumbnails` | regression | At least one thumbnail present |
+| `HomeTest` | `testHomePageUrl` | regression | URL contains "youtube.com" |
+| `SearchTest` | `testSearchReturnsResults` | smoke, regression | Search returns at least one result |
+| `SearchTest` | `testSearchResultsUrl` | smoke, regression | URL contains search_query param |
+| `SearchTest` | `testSearchResultsPageTitle` | regression | Page title contains search term |
+| `SearchTest` | `testSearchResultsHaveChannelNames` | regression | Channel names visible in results |
+| `SearchTest` | `testSearchFromResultsPage` | regression | Re-search from results page works |
+| `VideoTest` | `testVideoPlayerIsVisible` | smoke, regression | Video player element visible |
+| `VideoTest` | `testVideoPageUrl` | smoke, regression | URL contains /watch |
+| `VideoTest` | `testVideoTitleIsVisible` | regression | Video title is non-empty |
+| `VideoTest` | `testChannelNameIsVisible` | regression | Channel name is non-empty |
+| `VideoTest` | `testRelatedVideosAreShown` | regression | Related videos sidebar present |
+| `NavigationTest` | `testDirectNavigationToHome` | smoke, regression | Direct nav loads YouTube home |
+| `NavigationTest` | `testBackFromSearchResultsToHome` | regression | Back from search stays on youtube.com |
+| `NavigationTest` | `testSearchThenOpenVideoChangesUrl` | regression | Search → video changes URL to /watch |
+| `NavigationTest` | `testBackFromVideoToSearchResults` | regression | Back from video returns to results URL |
+| `NavigationTest` | `testPageTitleUpdatesAfterSearch` | regression | Title changes after search |
 
 ---
 
-### CartItem
+## TestNG Suite Configuration
 
-```java
-public class CartItem {
-    private String productName;
-    private int quantity;
-    private double unitPrice;
-
-    // Constructor, getters, setters, equals(), hashCode(), toString()
-}
-```
-
-| Field | Type | Description |
-|---|---|---|
-| `productName` | `String` | Name of the product in the cart. |
-| `quantity` | `int` | Current quantity in the cart. |
-| `unitPrice` | `double` | Unit price at time of adding to cart. |
-
----
-
-### TestDataNotFoundException
-
-```java
-public class TestDataNotFoundException extends RuntimeException {
-    public TestDataNotFoundException(String key, String filePath) {
-        super("Test data key '" + key + "' not found in file: " + filePath);
-    }
-}
-```
-
-Thrown by `TestDataProvider.getData(String key)` when the requested key is absent from the active data file.
-
----
-
-## TestNG Suite Configuration Design
-
-### `testng.xml` (Default — All Tests, Parallel Methods)
+### `testng.xml` (Default — All Tests, No Parallelism)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Full Suite" parallel="methods" thread-count="4" verbose="1">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd">
+<suite name="YouTube Automation Suite" parallel="none" verbose="1">
 
     <listeners>
         <listener class-name="listeners.TestNGListener"/>
     </listeners>
 
-    <test name="All Tests">
-        <classes>
-            <class name="tests.LoginTest"/>
-            <class name="tests.SearchTest"/>
-            <class name="tests.ProductTest"/>
-            <class name="tests.CartTest"/>
-            <class name="tests.CheckoutTest"/>
-        </classes>
+    <test name="Home Tests">
+        <classes><class name="tests.HomeTest"/></classes>
     </test>
-
-</suite>
-```
-
-### `testng-smoke.xml` (Smoke Suite — `smoke` Group Only)
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Smoke Suite" parallel="methods" thread-count="2" verbose="1">
-
-    <listeners>
-        <listener class-name="listeners.TestNGListener"/>
-    </listeners>
-
-    <test name="Smoke Tests">
-        <groups>
-            <run>
-                <include name="smoke"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="tests.LoginTest"/>
-            <class name="tests.SearchTest"/>
-            <class name="tests.ProductTest"/>
-            <class name="tests.CartTest"/>
-            <class name="tests.CheckoutTest"/>
-        </classes>
+    <test name="Search Tests">
+        <classes><class name="tests.SearchTest"/></classes>
     </test>
-
-</suite>
-```
-
-### `testng-regression.xml` (Regression Suite — `regression` Group)
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Regression Suite" parallel="methods" thread-count="4" verbose="1">
-
-    <listeners>
-        <listener class-name="listeners.TestNGListener"/>
-    </listeners>
-
-    <test name="Regression Tests">
-        <groups>
-            <run>
-                <include name="regression"/>
-            </run>
-        </groups>
-        <classes>
-            <class name="tests.LoginTest"/>
-            <class name="tests.SearchTest"/>
-            <class name="tests.ProductTest"/>
-            <class name="tests.CartTest"/>
-            <class name="tests.CheckoutTest"/>
-        </classes>
+    <test name="Video Tests">
+        <classes><class name="tests.VideoTest"/></classes>
+    </test>
+    <test name="Navigation Tests">
+        <classes><class name="tests.NavigationTest"/></classes>
     </test>
 
 </suite>
 ```
 
 **Design decisions:**
-- `parallel="methods"` is the default to maximize throughput; each method gets its own `WebDriver` instance (created in `@BeforeMethod`).
-- `thread-count="4"` for full/regression suites; `thread-count="2"` for smoke to reduce resource usage.
-- The `<listeners>` element at suite level ensures `TestNGListener` is active for every test without requiring per-class annotation.
-- Browser and suite file are overridable via Maven Surefire system properties: `-Dbrowser=chrome -DsuiteXmlFile=testng-smoke.xml`.
-
+- `parallel="none"` — YouTube tests are sequential to avoid session conflicts and rate limiting.
+- Each test class is its own `<test>` block for cleaner reporting in ExtentReports and TestNG output.
+- `TestNGListener` registered at suite level — active for all tests without per-class annotation.
 
 ---
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+### Property 1: Home Page Title Contains "YouTube"
 
-The following properties were derived from the acceptance criteria. Each is universally quantified and suitable for property-based testing using a library such as [jqwik](https://jqwik.net/) (Java PBT library). Criteria that are purely structural, configuration-based, or infrastructure-dependent are covered by smoke/integration tests in the Testing Strategy section instead.
+*For any* browser session navigating to `https://www.youtube.com`, `HomePage.getPageTitle()` SHALL return a non-empty string containing `"YouTube"`.
 
----
-
-### Property 1: Invalid Credentials Always Produce an Error Message
-
-*For any* pair of strings (username, password) that do not correspond to a registered account in the AUT, submitting them via `LoginPage.login()` SHALL result in an error message being displayed on the login page, and the browser URL SHALL remain on the login page.
-
-**Validates: Requirements 1.2**
+**Validates: Requirement 1.1**
 
 ---
 
-### Property 2: Search Results Contain the Search Term
+### Property 2: Search Always Returns Results for Known Terms
 
-*For any* non-empty search term drawn from the AUT's known product catalog, calling `SearchPage.searchFor(term)` SHALL return a results page where every displayed product name or description contains the search term (case-insensitive).
+*For any* non-empty search term from the known test data set, `SearchResultsPage.hasResults()` SHALL return `true` after calling `HomePage.searchFor(term)`.
 
-**Validates: Requirements 2.1**
-
----
-
-### Property 3: Clicking a Search Result Navigates to the Correct Product Page
-
-*For any* search result item displayed on the results page, clicking it via `SearchPage.clickResult(productName)` SHALL navigate to a `ProductPage` whose title or URL corresponds to that product name.
-
-**Validates: Requirements 2.3**
+**Validates: Requirement 2.1**
 
 ---
 
-### Property 4: Category Page Displays Only Products from That Category
+### Property 3: Search URL Contains Query Parameter
 
-*For any* product category navigated to on the AUT, all product names returned by `ProductPage.getCategoryProducts()` SHALL belong exclusively to that category (verified against the AUT's category metadata).
+*For any* search performed via `HomePage.searchFor(term)`, the resulting URL SHALL contain `"search_query"` or `"results"`.
 
-**Validates: Requirements 3.1**
-
----
-
-### Property 5: ProductDetails Object Is Fully Populated
-
-*For any* product selected via `ProductPage.selectProduct(productName)`, the `ProductDetails` object returned by `ProductPage.getProductDetails()` SHALL have a non-null, non-empty `name`; a `price` greater than zero; a non-null, non-empty `description`; and a `quantity` greater than or equal to zero.
-
-**Validates: Requirements 3.2, 3.4**
+**Validates: Requirement 2.2**
 
 ---
 
-### Property 6: Cart Count Increments by the Quantity Added
+### Property 4: Video Page URL Contains /watch
 
-*For any* product and any positive integer quantity `n`, calling `CartPage.addToCart(productName, n)` SHALL result in `CartPage.getCartItemCount()` increasing by exactly `n` compared to the count before the call.
+*For any* video result clicked via `SearchResultsPage.clickFirstResult()`, the resulting URL SHALL contain `"/watch"`.
 
-**Validates: Requirements 4.1**
-
----
-
-### Property 7: Cart Reflects Added Product Details
-
-*For any* product added to the cart with a given quantity, the list returned by `CartPage.getCartItems()` SHALL contain a `CartItem` entry whose `productName`, `unitPrice`, and `quantity` match the values used when calling `addToCart`.
-
-**Validates: Requirements 4.2**
+**Validates: Requirement 3.1**
 
 ---
 
-### Property 8: Line Item Total Equals Unit Price Times Quantity
+### Property 5: Video Title Is Non-Empty
 
-*For any* cart item with unit price `p` and after updating its quantity to `q` via `CartPage.updateQuantity(productName, q)`, the value returned by `CartPage.getLineItemTotal(productName)` SHALL equal `p × q` (within floating-point tolerance of 0.01).
+*For any* video watch page loaded via `SearchResultsPage.clickFirstResult()`, `VideoPage.getVideoTitle()` SHALL return a non-empty string.
 
-**Validates: Requirements 4.3**
-
----
-
-### Property 9: Checkout Order Summary Matches Cart Contents
-
-*For any* set of products added to the cart before proceeding to checkout, the list of `OrderLineItem` objects returned by `CheckoutPage.getOrderSummary()` SHALL contain one entry per cart item, with each entry's `productName`, `quantity`, and `unitPrice` matching the corresponding `CartItem`.
-
-**Validates: Requirements 5.2, 5.3**
+**Validates: Requirement 3.3**
 
 ---
 
-### Property 10: getPageTitle Returns the Browser Document Title
+### Property 6: Missing Key Throws TestDataNotFoundException
 
-*For any* page object whose underlying page has been loaded in the browser, calling `getPageTitle()` SHALL return a non-empty string equal to `driver.getTitle()` at the time of the call.
+*For any* string `k` not present in `testdata.json`, calling `TestDataProvider.getData(k)` SHALL throw `TestDataNotFoundException` whose message contains `k`.
 
-**Validates: Requirements 6.1**
-
----
-
-### Property 11: Interactive Elements Are Visible and Enabled Before Interaction
-
-*For any* button or link element returned by a Page Object interaction method, and *for any* product page loaded in the browser, the element SHALL satisfy `WebElement.isDisplayed() == true` and `WebElement.isEnabled() == true`; additionally, the product name, price, and image elements SHALL all be visible within the viewport.
-
-**Validates: Requirements 6.2, 6.3**
+**Validates: Requirement 8.3**
 
 ---
 
-### Property 12: Screenshot Is Captured and Embedded in Report on Test Failure
+### Property 7: RetryAnalyzer Retries Once Then Fails
 
-*For any* test method that terminates with a failure status, a screenshot file SHALL exist in the `screenshots/` directory with a filename containing the test method name, and the corresponding `ExtentTest` node in the HTML report SHALL contain a reference to that screenshot file path.
+*For any* test that fails on every attempt, `RetryAnalyzer.retry()` SHALL return `true` on the first invocation and `false` on the second, resulting in exactly one retry.
 
-**Validates: Requirements 8.3, 8.4**
-
----
-
-### Property 13: Every Test Step Is Logged with Its Outcome
-
-*For any* test step logged via `ExtentReporter.log(status, message)`, the generated HTML report SHALL contain a log entry with the exact step description and a status indicator matching the provided `Status` value (pass, fail, or info).
-
-**Validates: Requirements 8.5**
+**Validates: Requirement 9.2**
 
 ---
 
-### Property 14: Browser System Property Selects the Correct WebDriver
+### Property 8: Screenshot Captured and Embedded on Failure
 
-*For any* valid browser name string passed as the `browser` system property (e.g., `"chrome"`, `"firefox"`, `"edge"`), the `WebDriver` instance created in `BaseTest.setUp()` SHALL be an instance of the corresponding driver class (`ChromeDriver`, `FirefoxDriver`, `EdgeDriver`).
+*For any* test method that terminates with a failure status, a screenshot file SHALL exist in `screenshots/` with a filename containing the test name, and the ExtentReporter node SHALL contain a reference to that path.
 
-**Validates: Requirements 9.6**
-
----
-
-### Property 15: Test Data Round-Trip
-
-*For any* key-value pair `(k, v)` present in the active test data file, calling `TestDataProvider.getData(k)` SHALL return a string equal to `v`.
-
-**Validates: Requirements 12.1**
-
----
-
-### Property 16: Missing Key Throws TestDataNotFoundException with Key Name
-
-*For any* string `k` that is not present as a key in the active test data file, calling `TestDataProvider.getData(k)` SHALL throw a `TestDataNotFoundException` whose message contains the string `k`.
-
-**Validates: Requirements 12.4**
-
----
-
-### Property 17: RetryAnalyzer Retries Failed Tests Up to MAX_RETRY_COUNT Times
-
-*For any* test method that fails on every attempt, the `RetryAnalyzer` SHALL invoke `retry()` returning `true` for the first `MAX_RETRY_COUNT` (2) invocations and `false` on the `(MAX_RETRY_COUNT + 1)`th invocation, resulting in the test being retried exactly 2 times before being marked as failed.
-
-**Validates: Requirements 13.8**
+**Validates: Requirement 6.2, 6.3**
 
 ---
 
 ## Error Handling
 
+### Cookie Consent Dialog
+`HomePage.dismissCookieConsent()` uses a 5-second `WebDriverWait` for the consent button. If the button is not found (no dialog), the exception is silently caught and execution continues. This prevents test failures in regions where no consent dialog appears.
+
 ### Timeout and Element Not Found
+All Page Object methods use `WebDriverWait` with `ExpectedConditions`. On timeout, a `TimeoutException` is thrown. Page objects catch and return safe defaults (`false`, `""`, `0`) for boolean/string/int accessors to prevent test crashes on optional elements.
 
-All Page Object methods that interact with the DOM use `WebDriverWait` with `ExpectedConditions`. When an element is not found or not in the expected state within the configured timeout, a `TimeoutException` is thrown with a message that includes:
-- The page class name
-- The locator used (e.g., `By.cssSelector("input[name='username']")`)
-- The expected condition (e.g., `visibilityOfElementLocated`)
-- The timeout duration
+### Video Autoplay Interference
+`VideoPage.pauseVideo()` executes `document.querySelector('video').pause()` via `JavascriptExecutor`. This is called before assertions on video metadata to prevent the player from navigating away or triggering overlays.
 
-Example:
-```
-TimeoutException: [LoginPage] Element not visible after 10s — locator: By.cssSelector("input[name='username']"), condition: visibilityOfElementLocated
-```
-
-### Element Not Interactable
-
-`CartPage.addToCart()` wraps the add-to-cart button click in a `WebDriverWait` for `elementToBeClickable`. If the button is not interactable within 10 seconds, an `ElementNotInteractableException` is thrown with the button's locator and page context.
-
-### Product Not Found
-
-`ProductPage.selectProduct(String productName)` iterates the product list and throws `NoSuchElementException` with the product name if no matching element is found within the timeout.
-
-### Test Data Not Found
-
-`TestDataProvider.getData(String key)` throws `TestDataNotFoundException` (a `RuntimeException` subclass) with the missing key name and the data file path. This surfaces immediately at test setup rather than causing a `NullPointerException` mid-test.
-
-### Checkout Page Load Failure
-
-`CheckoutPage.proceedToCheckout()` uses a 15-second `WebDriverWait` (longer than the standard 10 s) to account for checkout page complexity. On timeout, a `TimeoutException` is thrown identifying the checkout page load failure.
+### Duplicate Listener Registration
+`allure-testng` auto-registers via ServiceLoader. `ExtentReporter.init()` and `BaseTest.initSuite()` both guard against double-initialization using a `volatile boolean suiteInitialized` flag and a `extent != null` null-check respectively.
 
 ### Screenshot Capture Failure
+`ScreenshotUtility.capture()` wraps the screenshot operation in try-catch. On failure, it logs at WARN level and returns `null` — screenshot failure must not mask the original test failure.
 
-`ScreenshotUtility.capture()` wraps the `TakesScreenshot` cast and file write in a try-catch. If screenshot capture fails (e.g., driver already closed), the failure is logged at WARN level and the test continues — screenshot failure must not mask the original test failure.
-
-### Retry on Transient Failure
-
-`RetryAnalyzer` catches transient failures (network blips, stale element references) by retrying up to 2 times. After 2 retries, the test is marked as failed and the failure is reported normally.
-
-### Thread Safety
-
-`ExtentReporter` uses a `ThreadLocal<ExtentTest>` to ensure each parallel test thread writes to its own report node. The `ExtentReports` instance is shared but `flush()` is called only in `@AfterSuite` after all threads have completed.
-
----
-
-## Testing Strategy
-
-### Overview
-
-The framework uses a dual testing approach:
-- **Unit tests** verify specific examples, edge cases, and error conditions for utility classes and data models.
-- **Property-based tests** verify universal properties across many generated inputs for core framework logic.
-
-Both are complementary. Unit tests catch concrete bugs with known inputs; property tests verify general correctness across the input space.
-
-### Property-Based Testing Library
-
-**Library:** [jqwik](https://jqwik.net/) — a property-based testing library for Java that integrates with JUnit 5 and can be run alongside TestNG via Maven Surefire.
-
-**Configuration:** Each property test is configured to run a minimum of **100 tries** (jqwik default). Tests that interact with the AUT use mocked `WebDriver` instances (Mockito) to keep execution fast and deterministic.
-
-**Dependency (pom.xml):**
-```xml
-<dependency>
-    <groupId>net.jqwik</groupId>
-    <artifactId>jqwik</artifactId>
-    <version>1.8.1</version>
-    <scope>test</scope>
-</dependency>
-<dependency>
-    <groupId>org.mockito</groupId>
-    <artifactId>mockito-core</artifactId>
-    <version>5.11.0</version>
-    <scope>test</scope>
-</dependency>
-```
-
-### Property Test Structure
-
-Each property test is tagged with a comment referencing the design property it validates:
-
-```java
-// Feature: ai-ecommerce-automation-framework, Property 16: Missing key throws TestDataNotFoundException with key name
-@Property(tries = 100)
-void missingKeyThrowsException(@ForAll @StringLength(min = 1) String key) {
-    // Assume key is not in the data file
-    Assume.that(!testDataProvider.hasKey(key));
-    assertThatThrownBy(() -> testDataProvider.getData(key))
-        .isInstanceOf(TestDataNotFoundException.class)
-        .hasMessageContaining(key);
-}
-```
-
-**Tag format:** `Feature: ai-ecommerce-automation-framework, Property {number}: {property_text}`
-
-### Unit Test Coverage
-
-Unit tests (TestNG `@Test` methods) cover:
-
-| Area | Test Focus |
-|---|---|
-| `TestDataProvider` | Key lookup, missing key exception, file parsing |
-| `ProductDetails` | Constructor, getters, `equals()`, `hashCode()` |
-| `OrderLineItem` | Constructor, getters, `equals()`, `hashCode()`, line total calculation |
-| `CartItem` | Constructor, getters, `equals()`, `hashCode()` |
-| `RetryAnalyzer` | Retry count boundary (0, 1, 2, 3 failures) |
-| `ScreenshotUtility` | File naming convention (test name + timestamp in filename) |
-| `ExtentReporter` | Thread-local isolation, log status mapping |
-
-### Integration Test Coverage
-
-Integration tests run against the live AUT (or a local mock server) and cover:
-
-| Area | Test Focus | Count |
-|---|---|---|
-| ExtentReports generation | HTML report exists with pass/fail/skip counts | 1–2 |
-| TestNG built-in reports | `index.html` and `emailable-report.html` in `target/surefire-reports/` | 1 |
-| Screenshot on failure | File exists in `screenshots/` after a forced failure | 1–2 |
-| Jenkins pipeline | `Jenkinsfile` stages execute without error | 1 |
-
-### Smoke Test Coverage
-
-Smoke tests verify framework setup and configuration:
-
-| Area | Check |
-|---|---|
-| Folder structure | `src/test/java/base/`, `pages/`, `tests/`, `utils/`, `listeners/` exist |
-| Suite XML files | `testng.xml`, `testng-smoke.xml`, `testng-regression.xml` exist and are valid XML |
-| `pom.xml` | All required dependencies present with pinned versions; Surefire configured |
-| `Jenkinsfile` | Exists with checkout, build, test, and publish stages |
-| Steering files | `.kiro/steering/` contains at least one `.md` file |
-| Kiro hooks | `.kiro/hooks/` contains hooks for `fileCreated` and spec update events |
-
-### End-to-End Test Scenarios
-
-The following end-to-end scenarios are implemented as TestNG `@Test` methods grouped under `smoke` and `regression`:
-
-| Scenario | Group | Page Objects Used |
-|---|---|---|
-| Valid login navigates to home page | smoke, regression | LoginPage |
-| Invalid login shows error message | smoke, regression | LoginPage |
-| Search for existing product returns results | smoke, regression | SearchPage, ProductPage |
-| Search for non-existent product shows no-results | regression | SearchPage |
-| Select product from category shows details | regression | ProductPage |
-| Add product to cart increments count | smoke, regression | ProductPage, CartPage |
-| Update cart quantity recalculates total | regression | CartPage |
-| Proceed to checkout shows order summary | smoke, regression | CartPage, CheckoutPage |
-| Responsive layout at 375px viewport | regression | All Page Objects |
-
-### Test Execution Commands
-
-```bash
-# Run full suite (default)
-mvn test -DsuiteXmlFile=testng.xml
-
-# Run smoke suite only
-mvn test -DsuiteXmlFile=testng-smoke.xml
-
-# Run regression suite
-mvn test -DsuiteXmlFile=testng-regression.xml
-
-# Run with a specific browser
-mvn test -DsuiteXmlFile=testng.xml -Dbrowser=firefox
-
-# Run property-based tests only (jqwik via JUnit Platform)
-mvn test -Dgroups=property
-```
-
-### Test Data Strategy
-
-- All test input values (usernames, passwords, search terms, product names, URLs) are stored in `testdata/testdata.json`.
-- Environment-specific configuration (base URL, browser, timeout) is stored in `testdata/config.properties`.
-- `TestDataProvider.getData(String key)` is the single access point for all test data.
-- `@DataProvider` methods in `TestDataProvider` supply multi-row data sets for data-driven `@Test` methods.
-
-### Reporting Artifacts
-
-After each test run, the following artifacts are produced:
-
-| Artifact | Location | Description |
-|---|---|---|
-| ExtentReport HTML | `reports/ExtentReport_{timestamp}.html` | Rich HTML report with screenshots |
-| TestNG index report | `target/surefire-reports/index.html` | TestNG built-in suite summary |
-| TestNG emailable report | `target/surefire-reports/emailable-report.html` | Compact HTML for email distribution |
-| Screenshots | `screenshots/{testName}_{timestamp}.png` | Captured on test failure |
-| Execution log | `logs/test-run_{timestamp}.log` | Full Log4j2 execution log |
+### Test Data Not Found
+`TestDataProvider.getData(key)` throws `TestDataNotFoundException` (a `RuntimeException` subclass) immediately at test setup, surfacing the missing key before any browser interaction occurs.

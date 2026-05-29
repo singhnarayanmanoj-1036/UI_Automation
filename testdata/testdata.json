@@ -1,10 +1,9 @@
 {
-  "validUsername": "admin",
-  "validPassword": "admin1234",
-  "invalidUsername": "invalid_user_xyz_123",
-  "invalidPassword": "wrong_pass_xyz_123",
-  "searchTermExisting": "hp",
-  "searchTermNonExistent": "xyznonexistentproduct999abc",
-  "productName": "HP ENVY",
-  "categoryName": "Laptops"
+  "searchTermExisting": "Selenium WebDriver tutorial",
+  "searchTermTrending": "Java programming",
+  "searchTermShorts": "funny cats shorts",
+  "searchTermMusic": "lofi hip hop",
+  "searchTermNonExistent": "xyznonexistentvideo999abcdef123",
+  "expectedHomeTitle": "YouTube",
+  "expectedSearchResultsTitle": "Selenium WebDriver tutorial - YouTube"
 }

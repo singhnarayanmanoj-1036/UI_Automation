@@ -15,6 +15,7 @@ public class ExtentReporter {
     private static final ThreadLocal<ExtentTest> testThread = new ThreadLocal<>();
 
     public static void init() {
+        if (extent != null) return; // guard against double-init from multiple listener registrations
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
         String reportPath = "reports/ExtentReport_" + timestamp + ".html";
         ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);

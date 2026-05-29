@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-29T11:21:47 IST" name="YouTube Automation Suite" finished-at="2026-05-29T11:22:55 IST" duration-ms="67826">
+    <groups>
+      <group name="regression">
+        <method signature="HomeTest.testHomePageHasVideoThumbnails()[pri:0, instance:tests.HomeTest@37f21974]" name="testHomePageHasVideoThumbnails" class="tests.HomeTest"/>
+        <method signature="HomeTest.testHomePageTitle()[pri:0, instance:tests.HomeTest@37f21974]" name="testHomePageTitle" class="tests.HomeTest"/>
+        <method signature="HomeTest.testHomePageUrl()[pri:0, instance:tests.HomeTest@37f21974]" name="testHomePageUrl" class="tests.HomeTest"/>
+        <method signature="HomeTest.testLogoIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" name="testLogoIsVisible" class="tests.HomeTest"/>
+        <method signature="HomeTest.testSearchBoxIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" name="testSearchBoxIsVisible" class="tests.HomeTest"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="HomeTest.testHomePageTitle()[pri:0, instance:tests.HomeTest@37f21974]" name="testHomePageTitle" class="tests.HomeTest"/>
+        <method signature="HomeTest.testLogoIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" name="testLogoIsVisible" class="tests.HomeTest"/>
+        <method signature="HomeTest.testSearchBoxIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" name="testSearchBoxIsVisible" class="tests.HomeTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2026-05-29T11:21:47 IST" name="Home Tests" finished-at="2026-05-29T11:22:55 IST" duration-ms="67826">
+      <class name="tests.HomeTest">
+        <test-method is-config="true" signature="initSuite()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:47 IST" name="initSuite" finished-at="2026-05-29T11:21:47 IST" duration-ms="425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initSuite -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:47 IST" name="setUp" finished-at="2026-05-29T11:21:50 IST" duration-ms="2753" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.HomeTest.testHomePageHasVideoThumbnails()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageHasVideoThumbnails()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:50 IST" name="testHomePageHasVideoThumbnails" description="Search results page should display video thumbnails" finished-at="2026-05-29T11:21:55 IST" duration-ms="4485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageHasVideoThumbnails -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:55 IST" name="tearDown" finished-at="2026-05-29T11:21:55 IST" duration-ms="500" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHomePageHasVideoThumbnails status=SUCCESS method=HomeTest.testHomePageHasVideoThumbnails()[pri:0, instance:tests.HomeTest@37f21974] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:55 IST" name="setUp" finished-at="2026-05-29T11:21:57 IST" duration-ms="1563" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.HomeTest.testHomePageTitle()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageTitle()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:21:57 IST" name="testHomePageTitle" description="YouTube home page should load with correct title" finished-at="2026-05-29T11:22:12 IST" duration-ms="15488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageTitle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:12 IST" name="tearDown" finished-at="2026-05-29T11:22:13 IST" duration-ms="817" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHomePageTitle status=SUCCESS method=HomeTest.testHomePageTitle()[pri:0, instance:tests.HomeTest@37f21974] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:13 IST" name="setUp" finished-at="2026-05-29T11:22:15 IST" duration-ms="1481" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.HomeTest.testHomePageUrl()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageUrl()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:15 IST" name="testHomePageUrl" description="Home page URL should contain youtube.com" finished-at="2026-05-29T11:22:30 IST" duration-ms="15230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageUrl -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:30 IST" name="tearDown" finished-at="2026-05-29T11:22:31 IST" duration-ms="824" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHomePageUrl status=SUCCESS method=HomeTest.testHomePageUrl()[pri:0, instance:tests.HomeTest@37f21974] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:31 IST" name="setUp" finished-at="2026-05-29T11:22:32 IST" duration-ms="1300" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.HomeTest.testLogoIsVisible()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLogoIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:32 IST" name="testLogoIsVisible" description="YouTube logo should be visible on home page" finished-at="2026-05-29T11:22:47 IST" duration-ms="15259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogoIsVisible -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:47 IST" name="tearDown" finished-at="2026-05-29T11:22:48 IST" duration-ms="775" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLogoIsVisible status=SUCCESS method=HomeTest.testLogoIsVisible()[pri:0, instance:tests.HomeTest@37f21974] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:48 IST" name="setUp" finished-at="2026-05-29T11:22:50 IST" duration-ms="1378" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.HomeTest.testSearchBoxIsVisible()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSearchBoxIsVisible()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:50 IST" name="testSearchBoxIsVisible" description="Search box should be visible on the search results page" finished-at="2026-05-29T11:22:54 IST" duration-ms="4564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchBoxIsVisible -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:54 IST" name="tearDown" finished-at="2026-05-29T11:22:55 IST" duration-ms="1023" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testSearchBoxIsVisible status=SUCCESS method=HomeTest.testSearchBoxIsVisible()[pri:0, instance:tests.HomeTest@37f21974] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDownSuite()[pri:0, instance:tests.HomeTest@37f21974]" started-at="2026-05-29T11:22:55 IST" name="tearDownSuite" finished-at="2026-05-29T11:22:56 IST" duration-ms="626" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSuite -->
+      </class> <!-- tests.HomeTest -->
+    </test> <!-- Home Tests -->
+  </suite> <!-- YouTube Automation Suite -->
+</testng-results>

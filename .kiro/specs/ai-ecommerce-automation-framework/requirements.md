@@ -2,231 +2,176 @@
 
 ## Introduction
 
-This document defines the requirements for an AI-Driven Ecommerce Automation Framework targeting the Advantage Online Shopping application (https://advantageonlineshopping.com). The framework is built using Java, Playwright, and TestNG, follows the Page Object Model (POM) design pattern, and leverages Kiro's AI-assisted engineering capabilities — including Spec Mode, Steering, and Hooks — to accelerate test development, reduce manual effort, and support scalable UI automation with CI/CD integration. TestNG serves as the primary test framework, providing annotations, suite management, parallel execution, data-driven testing, and reporting hooks.
+This document defines the requirements for a YouTube UI Automation Framework targeting [https://www.youtube.com](https://www.youtube.com). The framework is built using Java 11, Selenium WebDriver 4.x, and TestNG 7.x, follows the Page Object Model (POM) design pattern, and leverages Kiro's AI-assisted engineering capabilities — including Spec Mode, Steering, and Hooks — to accelerate test development and support scalable UI automation. The framework is intended for demo and regression purposes, covering YouTube's core user-facing functionality: home page, search, video playback, and navigation.
 
 ---
 
 ## Glossary
 
-- **Framework**: The AI-Driven Ecommerce Automation Framework specified in this document.
-- **AUT**: Application Under Test — the Advantage Online Shopping web application at https://advantageonlineshopping.com.
+- **Framework**: The YouTube UI Automation Framework specified in this document.
+- **AUT**: Application Under Test — YouTube at [https://www.youtube.com](https://www.youtube.com).
 - **POM**: Page Object Model — a design pattern that creates an object repository for web UI elements, separating page interaction logic from test logic.
-- **Test_Runner**: The TestNG framework combined with the Maven Surefire plugin responsible for executing test suites defined in TestNG XML suite files (e.g., `testng.xml`, `testng-smoke.xml`, `testng-regression.xml`).
-- **WebDriver**: The Playwright browser context managing Chrome browser sessions via Playwright's Chromium channel.
+- **Test_Runner**: The TestNG framework combined with the Maven Surefire plugin responsible for executing test suites defined in `testng.xml`.
+- **WebDriver**: The Selenium WebDriver managing Chrome browser sessions via ChromeDriver.
 - **Page_Object**: A Java class encapsulating the UI elements and interactions for a specific page of the AUT.
 - **Base_Test**: The base test class providing setup, teardown, and shared test utilities for all test classes.
+- **Base_Page**: The base page class providing shared wait helpers, Angular sync, and page load utilities for all Page Objects.
 - **Extent_Reporter**: The reporting component that generates HTML Extent Reports from test execution results.
 - **Screenshot_Utility**: The utility component responsible for capturing and saving screenshots on test failure.
-- **Login_Page**: The Page Object representing the AUT's login and authentication page.
-- **Search_Page**: The Page Object representing the AUT's product search functionality.
-- **Product_Page**: The Page Object representing the AUT's product detail and category pages.
-- **Cart_Page**: The Page Object representing the AUT's shopping cart page.
-- **Checkout_Page**: The Page Object representing the AUT's checkout flow pages.
-- **Test_Data_Provider**: The component responsible for supplying test input data from external files.
-- **CI_Pipeline**: The Jenkins-based continuous integration pipeline executing the Framework.
-- **Smoke_Suite**: A subset of tests validating core application functionality.
-- **Regression_Suite**: The full set of tests validating all automated application functionality.
+- **Home_Page**: The Page Object representing the YouTube home page.
+- **Search_Results_Page**: The Page Object representing the YouTube search results page.
+- **Video_Page**: The Page Object representing a YouTube video watch page.
+- **Test_Data_Provider**: The component responsible for supplying test input data from external JSON files.
+- **Smoke_Suite**: A subset of tests validating core YouTube functionality (home load, search, video open).
+- **Regression_Suite**: The full set of tests validating all automated YouTube functionality.
 - **Kiro**: The AI-assisted development environment used to generate specs, steering rules, and hooks.
 - **Steering_File**: A Kiro configuration file defining coding standards and framework rules applied during AI code generation.
 - **Hook**: A Kiro automation trigger that executes defined actions on IDE events.
-- **WebDriverWait**: The Playwright timeout and wait mechanism used to synchronize test execution with page state.
-- **TestNG**: The primary Java test framework providing annotations (`@Test`, `@BeforeMethod`, `@AfterMethod`, `@BeforeClass`, `@AfterClass`, `@BeforeSuite`, `@AfterSuite`), suite management, parallel execution, data-driven testing, and listener hooks.
-- **TestNG_Suite**: A TestNG XML suite file (e.g., `testng.xml`, `testng-smoke.xml`, `testng-regression.xml`) that defines test classes, groups, parameters, and parallel execution settings.
-- **TestNG_Listener**: A class implementing `ITestListener` that receives callbacks on test start, success, failure, and skip events, used for reporting and logging hooks.
-- **TestNG_DataProvider**: A method annotated with `@DataProvider` that supplies parameterized test data to `@Test` methods, enabling data-driven test execution.
-- **TestNG_RetryAnalyzer**: A class implementing `IRetryAnalyzer` that automatically re-runs failed tests up to a configurable maximum retry count to handle transient failures.
-- **ProductDetails**: A Java data object containing name, price, description, and quantity fields for a product.
-- **OrderLineItem**: A Java data object representing a single item in the checkout order summary.
+- **TestNG_Listener**: A class implementing `ITestListener` that receives callbacks on test start, success, failure, and skip events.
+- **TestNG_RetryAnalyzer**: A class implementing `IRetryAnalyzer` that automatically re-runs failed tests up to a configurable maximum retry count.
 
 ---
 
 ## Requirements
 
-### Requirement 1: User Authentication Automation
+### Requirement 1: Home Page Validation
 
-**User Story:** As a QA engineer, I want to automate user login scenarios against the AUT, so that I can validate authentication behavior without manual intervention.
-
-#### Acceptance Criteria
-
-1. WHEN a valid username and password are provided, THE Login_Page SHALL submit the credentials and navigate the user to the authenticated home page.
-2. WHEN an invalid username or password is provided, THE Login_Page SHALL display an appropriate error message without navigating away from the login page.
-3. WHEN a login attempt completes, THE Login_Page SHALL return the resulting page state to the calling test for assertion.
-4. THE Login_Page SHALL expose a reusable `login(String username, String password)` method usable across all test classes.
-5. IF the login form elements are not located within 10 seconds of page load, THEN THE Login_Page SHALL throw a descriptive `TimeoutException` identifying the missing element.
-
----
-
-### Requirement 2: Product Search Automation
-
-**User Story:** As a QA engineer, I want to automate product search functionality, so that I can validate that search returns correct and relevant results.
+**User Story:** As a QA engineer, I want to automate validation of the YouTube home page, so that I can confirm the page loads correctly with all key elements visible.
 
 #### Acceptance Criteria
 
-1. WHEN a search term is entered and submitted, THE Search_Page SHALL display a results list containing products matching the search term.
-2. WHEN a search term returns no results, THE Search_Page SHALL display a no-results message accessible to the test for assertion.
-3. WHEN a search result item is clicked, THE Search_Page SHALL navigate to the corresponding Product_Page.
-4. THE Search_Page SHALL expose a reusable `searchFor(String term)` method that enters the term and submits the search form.
-5. IF the search input element is not located within 10 seconds of page load, THEN THE Search_Page SHALL throw a descriptive `TimeoutException` identifying the missing element.
+1. WHEN the browser navigates to `https://www.youtube.com`, THE Home_Page SHALL load and the page title SHALL contain the string `"YouTube"`.
+2. WHEN the home page is loaded, THE Home_Page SHALL display the YouTube logo element as visible in the viewport.
+3. WHEN the home page is loaded, THE Home_Page SHALL display the search input box as visible and interactable.
+4. WHEN the home page is loaded, THE Home_Page SHALL display at least one video thumbnail in the main content area.
+5. WHEN the home page is loaded, THE Home_Page SHALL have a current URL containing `"youtube.com"`.
+6. IF a cookie consent or region-specific dialog appears on page load, THEN THE Home_Page SHALL automatically dismiss it before any assertions are made.
 
 ---
 
-### Requirement 3: Product Selection and Validation
+### Requirement 2: Search Functionality
 
-**User Story:** As a QA engineer, I want to automate product selection from categories, so that I can validate that product details are correctly displayed.
+**User Story:** As a QA engineer, I want to automate YouTube search, so that I can validate that search returns relevant results and navigates correctly.
 
 #### Acceptance Criteria
 
-1. WHEN a product category is selected, THE Product_Page SHALL display a list of products belonging to that category.
-2. WHEN a product is selected from the list, THE Product_Page SHALL display the product name, price, description, and available quantity.
-3. THE Product_Page SHALL expose a reusable `selectProduct(String productName)` method that navigates to the specified product's detail view.
-4. WHEN product details are retrieved, THE Product_Page SHALL return a `ProductDetails` object containing name, price, description, and quantity fields for assertion.
-5. IF a specified product is not found on the page within 10 seconds, THEN THE Product_Page SHALL throw a descriptive `NoSuchElementException` identifying the missing product.
+1. WHEN a non-empty search term is entered and submitted via the search box, THE Search_Results_Page SHALL display at least one video result.
+2. WHEN a search is performed, THE Search_Results_Page SHALL have a current URL containing `"search_query"` or `"results"`.
+3. WHEN a search is performed, THE Search_Results_Page SHALL update the browser page title to reflect the search term.
+4. WHEN search results are displayed, THE Search_Results_Page SHALL show channel names alongside video results.
+5. WHEN a second search is performed from the search results page, THE Search_Results_Page SHALL update and display results for the new search term.
+6. IF the search input element is not located within 15 seconds of page load, THEN THE Search_Results_Page SHALL surface a `TimeoutException` identifying the missing element.
 
 ---
 
-### Requirement 4: Add to Cart Automation
+### Requirement 3: Video Playback Page Validation
 
-**User Story:** As a QA engineer, I want to automate adding products to the shopping cart, so that I can validate that cart state and product details are correctly maintained.
+**User Story:** As a QA engineer, I want to automate validation of the YouTube video watch page, so that I can confirm that video player and metadata elements are correctly rendered.
 
 #### Acceptance Criteria
 
-1. WHEN a product is added to the cart, THE Cart_Page SHALL increment the cart item count by the quantity added.
-2. WHEN the cart is opened after adding a product, THE Cart_Page SHALL display the correct product name, unit price, and quantity for each added item.
-3. WHEN the quantity of a cart item is updated to a new value, THE Cart_Page SHALL reflect the updated quantity and recalculate the line item total accordingly.
-4. THE Cart_Page SHALL expose a reusable `addToCart(String productName, int quantity)` method usable across test classes.
-5. IF the add-to-cart button is not interactable within 10 seconds, THEN THE Cart_Page SHALL throw a descriptive `ElementNotInteractableException` identifying the unresponsive element.
+1. WHEN a video result is clicked from the search results page, THE Video_Page SHALL load and the current URL SHALL contain `"/watch"`.
+2. WHEN the video watch page is loaded, THE Video_Page SHALL display the HTML5 video player element as visible.
+3. WHEN the video watch page is loaded, THE Video_Page SHALL display the video title as a non-empty string.
+4. WHEN the video watch page is loaded, THE Video_Page SHALL display the channel name as a non-empty string.
+5. WHEN the video watch page is loaded, THE Video_Page SHALL display at least one related video in the sidebar.
+6. THE Video_Page SHALL expose a `pauseVideo()` method that pauses the video via JavaScript to prevent autoplay interference during test assertions.
 
 ---
 
-### Requirement 5: Checkout Flow Automation
+### Requirement 4: Navigation Flows
 
-**User Story:** As a QA engineer, I want to automate the checkout flow, so that I can validate that the order summary and checkout pages reflect the correct cart contents.
+**User Story:** As a QA engineer, I want to automate browser navigation flows on YouTube, so that I can validate that forward and back navigation behaves correctly across pages.
 
 #### Acceptance Criteria
 
-1. WHEN the checkout process is initiated from the cart, THE Checkout_Page SHALL display the checkout page with all required form sections visible.
-2. WHEN the checkout page is loaded, THE Checkout_Page SHALL display an order summary listing each cart item with its name, quantity, and price.
-3. WHEN the order summary is retrieved, THE Checkout_Page SHALL return a list of `OrderLineItem` objects matching the items added to the cart.
-4. THE Checkout_Page SHALL expose a reusable `proceedToCheckout()` method that navigates from the cart to the first checkout step.
-5. IF the checkout page does not load within 15 seconds, THEN THE Checkout_Page SHALL throw a descriptive `TimeoutException` identifying the page load failure.
+1. WHEN the browser navigates directly to `https://www.youtube.com`, THE Home_Page SHALL load with a title containing `"YouTube"`.
+2. WHEN the browser navigates back from the search results page, THE browser URL SHALL remain on `youtube.com`.
+3. WHEN a video is opened from search results and the browser navigates back, THE browser URL SHALL return to a search results URL containing `"results"` or `"search_query"`.
+4. WHEN a search is performed from the home page, THE page title SHALL change from the home page title to a search-specific title.
+5. WHEN a video result is clicked from search results, THE browser URL SHALL change to contain `"/watch"`.
 
 ---
 
-### Requirement 6: UI Element Validation
-
-**User Story:** As a QA engineer, I want to validate key UI elements across pages, so that I can ensure the AUT renders correctly and critical elements are accessible.
-
-#### Acceptance Criteria
-
-1. WHEN a page is loaded, THE Page_Object SHALL provide a `getPageTitle()` method returning the browser document title for assertion.
-2. WHEN a button or link element is queried, THE Page_Object SHALL confirm the element is visible and enabled before returning it for interaction.
-3. WHEN product information is displayed on a page, THE Page_Object SHALL confirm that the product name, price, and image elements are visible within the viewport.
-4. WHEN the browser viewport is set to a width of 375 pixels, THE Page_Object SHALL confirm that primary navigation and product elements remain visible and interactable.
-5. IF a required UI element is not visible within 10 seconds of page load, THEN THE Page_Object SHALL throw a descriptive `TimeoutException` identifying the element by its locator.
-
----
-
-### Requirement 7: Framework Architecture and Page Object Model
+### Requirement 5: Framework Architecture and Page Object Model
 
 **User Story:** As a framework developer, I want the framework to follow POM and a scalable folder structure, so that tests are maintainable, reusable, and easy to extend.
 
 #### Acceptance Criteria
 
-1. THE Framework SHALL organize source files into the folder structure: `src/test/java/base/`, `src/test/java/pages/`, `src/test/java/tests/`, `src/test/java/utils/`, and `src/test/java/listeners/`.
-2. THE Framework SHALL implement a `Base_Test` class in `src/test/java/base/` providing `@BeforeSuite` and `@AfterSuite` methods for global Playwright instance setup and teardown, `@BeforeClass` and `@AfterClass` methods for class-level browser context setup and teardown, and `@BeforeMethod` and `@AfterMethod` methods for per-test page setup and teardown using TestNG annotations.
-3. THE Framework SHALL annotate every test method with `@Test`, specifying the applicable `groups` attribute (e.g., `groups = {"smoke"}` or `groups = {"regression"}`) to enable TestNG group-based suite filtering.
+1. THE Framework SHALL organize source files into: `src/test/java/base/`, `src/test/java/pages/`, `src/test/java/tests/`, `src/test/java/utils/`, and `src/test/java/listeners/`.
+2. THE Framework SHALL implement a `Base_Test` class providing `@BeforeSuite`, `@AfterSuite`, `@BeforeMethod`, and `@AfterMethod` TestNG lifecycle methods managing WebDriver setup and teardown.
+3. THE Framework SHALL implement a `Base_Page` class providing shared wait helpers (`waitForVisible`, `waitForClickable`, `waitForPageLoad`, `waitForAngular`, `pause`) used by all Page Objects.
 4. THE Framework SHALL implement one Page_Object class per AUT page in `src/test/java/pages/`, encapsulating all locators and interaction methods for that page.
-5. THE Framework SHALL store all test input data in external files under `testdata/` and supply them to tests via the `Test_Data_Provider`.
-6. THE Framework SHALL use Playwright's Java API exclusively for all browser interactions, with no mixing of other browser automation libraries.
-7. THE Framework SHALL define all Playwright locators using CSS selectors or ARIA roles, avoiding XPath unless no CSS or ARIA alternative exists.
+5. THE Framework SHALL store all test input data in `testdata/testdata.json` and `testdata/config.properties`, supplied to tests via `Test_Data_Provider`.
+6. THE Framework SHALL define all locators using CSS selectors as the primary strategy; ARIA attributes as secondary; ID selectors as tertiary; XPath only when no CSS or ARIA alternative exists.
+7. THE Framework SHALL use `WebDriverWait` + `ExpectedConditions` for all synchronization — no `Thread.sleep()` in test or page classes.
 
 ---
 
-### Requirement 8: Test Reporting
+### Requirement 6: Test Reporting
 
 **User Story:** As a QA engineer, I want the framework to generate detailed HTML reports with screenshots, so that I can quickly diagnose test failures.
 
 #### Acceptance Criteria
 
 1. WHEN a test suite execution completes, THE Extent_Reporter SHALL generate an HTML report in the `reports/` directory containing pass, fail, and skip counts.
-2. WHEN a test suite execution completes, THE TestNG_Listener SHALL generate TestNG's built-in `index.html` and `emailable-report.html` reports in the `target/surefire-reports/` directory as a supplementary report alongside the Extent Report.
-3. WHEN a test fails, THE Screenshot_Utility SHALL capture a full-page screenshot and save it to the `screenshots/` directory with a filename containing the test name and a timestamp.
-4. WHEN a test fails, THE Extent_Reporter SHALL embed the failure screenshot path into the corresponding test entry in the HTML report.
-5. WHEN a test step is executed, THE Extent_Reporter SHALL log the step description and outcome — pass, fail, or info — to the report.
-6. THE Framework SHALL maintain execution logs in a `logs/` directory, with one log file per test run named with the execution timestamp.
+2. WHEN a test fails, THE Screenshot_Utility SHALL capture a screenshot and save it to the `screenshots/` directory with a filename containing the test name and a timestamp.
+3. WHEN a test fails, THE Extent_Reporter SHALL embed the failure screenshot path into the corresponding test entry in the HTML report.
+4. WHEN a test step is executed, THE Extent_Reporter SHALL log the step description and outcome to the report.
+5. THE Framework SHALL maintain execution logs in a `logs/` directory, with one log file per test run named with the execution timestamp.
+6. THE `screenshots/` directory SHALL be cleared before each test suite run so only the current run's screenshots are retained.
 
 ---
 
-### Requirement 9: Test Execution Configuration
+### Requirement 7: Test Execution Configuration
 
-**User Story:** As a QA engineer, I want to execute tests in Chrome with parallel support and suite filtering, so that I can run targeted and efficient test campaigns.
+**User Story:** As a QA engineer, I want to execute tests in Chrome with suite filtering support, so that I can run targeted test campaigns.
 
 #### Acceptance Criteria
 
-1. THE Test_Runner SHALL execute all tests using the Chrome browser via Playwright's Chromium channel.
-2. THE Test_Runner SHALL support parallel test execution with a configurable thread count defined in the TestNG XML suite file using the `parallel` attribute set to `"methods"` or `"tests"` and the `thread-count` attribute.
-3. THE Test_Runner SHALL support execution of the Smoke_Suite by running the `testng-smoke.xml` TestNG_Suite file, which includes only tests annotated with `@Test(groups = {"smoke"})`.
-4. THE Test_Runner SHALL support execution of the Regression_Suite by running the `testng-regression.xml` TestNG_Suite file, which includes all tests annotated with `@Test(groups = {"regression"})`.
-5. THE Framework SHALL include a default `testng.xml` TestNG_Suite file in the project root that references all test classes and defines the default parallel execution configuration.
-6. WHEN a test execution is triggered with a `browser` system property, THE Test_Runner SHALL initialize Playwright for the specified browser channel instead of the default Chromium.
+1. THE Test_Runner SHALL execute all tests using the Chrome browser by default via WebDriverManager.
+2. THE Test_Runner SHALL support execution of the Smoke_Suite by running tests annotated with `@Test(groups = {"smoke"})`.
+3. THE Test_Runner SHALL support execution of the Regression_Suite by running tests annotated with `@Test(groups = {"regression"})`.
+4. THE Framework SHALL include a `testng.xml` suite file in the project root referencing all four test classes.
+5. WHEN a test execution is triggered with a `browser` system property (e.g., `-Dbrowser=firefox`), THE Test_Runner SHALL initialize the corresponding WebDriver instead of the default ChromeDriver.
+6. THE Framework SHALL support a `headless` system property that, when set to `true`, runs Chrome in headless mode.
 
 ---
 
-### Requirement 10: CI/CD Pipeline Integration
+### Requirement 8: Test Data Management
 
-**User Story:** As a DevOps engineer, I want the framework to integrate with Jenkins, so that tests execute automatically on code changes and reports are published to the pipeline.
+**User Story:** As a QA engineer, I want test data to be externalized and managed separately from test logic, so that tests can be updated without modifying code.
 
 #### Acceptance Criteria
 
-1. THE Framework SHALL include a `Jenkinsfile` in the project root defining a declarative pipeline with stages for checkout, build, test execution, and report publishing.
-2. WHEN the Jenkins pipeline executes the test stage, THE CI_Pipeline SHALL invoke `mvn test -DsuiteXmlFile=testng.xml` with configurable suite file and browser parameters passed as system properties via the Maven Surefire plugin.
-3. WHEN test execution completes in the CI_Pipeline, THE CI_Pipeline SHALL archive the contents of the `reports/`, `screenshots/`, and `target/surefire-reports/` directories as build artifacts.
-4. WHEN a test stage fails in the CI_Pipeline, THE CI_Pipeline SHALL mark the build as failed and send a notification containing the failure summary.
-5. THE Framework SHALL include a `pom.xml` defining all required dependencies — Playwright Java, TestNG (pinned version), ExtentReports, and logging libraries — with pinned version numbers, and SHALL configure the Maven Surefire plugin to reference the active TestNG_Suite XML file via the `<suiteXmlFiles>` configuration element.
+1. THE Test_Data_Provider SHALL read test input values — search terms and expected strings — from `testdata/testdata.json`.
+2. THE Test_Data_Provider SHALL expose a `getData(String key)` method returning the string value for the given key.
+3. IF a requested data key is not found in the data file, THEN THE Test_Data_Provider SHALL throw a `TestDataNotFoundException` identifying the missing key and file path.
+4. THE Framework SHALL not hardcode any test input values — search terms, URLs, or expected strings — directly in test or Page_Object classes.
+5. THE `baseUrl` SHALL be read from `testdata/config.properties` and exposed via `BaseTest.BASE_URL` for use across all test classes.
 
 ---
 
-### Requirement 11: AI-Assisted Engineering with Kiro
+### Requirement 9: Retry and Stability
 
-**User Story:** As a framework developer, I want to use Kiro's Spec Mode, Steering, and Hooks to accelerate development and enforce standards, so that AI-generated code is consistent and aligned with framework conventions.
+**User Story:** As a QA engineer, I want failed tests to be retried automatically, so that transient failures do not cause false negatives in the report.
 
 #### Acceptance Criteria
 
-1. THE Framework SHALL include Steering_Files in `.kiro/steering/` defining coding standards, naming conventions, POM structure rules, and Playwright Java usage guidelines applied during AI code generation.
-2. WHEN a new Page_Object file is created, THE Kiro Hook SHALL trigger a validation action confirming the file follows the POM structure defined in the active Steering_File.
-3. WHEN a spec document is updated, THE Kiro Hook SHALL trigger a notification action prompting the developer to review impacted Page_Object and test files.
-4. THE Framework SHALL store all Kiro spec documents — requirements, design, and tasks — in `.kiro/specs/ai-ecommerce-automation-framework/`.
-5. THE Framework SHALL include at least one Steering_File defining Playwright Java coding standards, including locator strategy preferences, async handling patterns, TestNG annotation conventions, and assertion best practices.
+1. THE Framework SHALL implement a `TestNG_RetryAnalyzer` that retries a failed test up to `MAX_RETRY_COUNT` times before marking it as failed.
+2. `MAX_RETRY_COUNT` SHALL be set to `1`, meaning each test gets one retry attempt (two total executions) before being marked failed.
+3. EVERY `@Test` method SHALL reference `retryAnalyzer = RetryAnalyzer.class` in its annotation.
+4. THE `TestNG_Listener` SHALL be registered in `testng.xml` via the `<listeners>` element so it is active for all suite executions.
 
 ---
 
-### Requirement 12: Test Data Management
+### Requirement 10: AI-Assisted Engineering with Kiro
 
-**User Story:** As a QA engineer, I want test data to be externalized and managed separately from test logic, so that tests can be run with different data sets without modifying code.
-
-#### Acceptance Criteria
-
-1. THE Test_Data_Provider SHALL read test input values — usernames, passwords, search terms, and product names — from JSON or properties files stored in the `testdata/` directory.
-2. WHEN a test requires credentials, THE Test_Data_Provider SHALL supply valid and invalid credential sets as separate named data entries.
-3. THE Test_Data_Provider SHALL expose a `getData(String key)` method returning the string value associated with the given key from the active data file.
-4. IF a requested data key is not found in the data file, THEN THE Test_Data_Provider SHALL throw a descriptive `TestDataNotFoundException` identifying the missing key.
-5. THE Framework SHALL not hardcode any test input values — usernames, passwords, URLs, product names, or search terms — directly in test or Page_Object classes.
-
----
-
-### Requirement 13: TestNG Configuration and Suite Management
-
-**User Story:** As a QA engineer, I want the framework to be fully configured with TestNG suite files, groups, data providers, listeners, parallel execution, and retry logic, so that I can manage and execute tests flexibly and reliably.
+**User Story:** As a framework developer, I want to use Kiro's Spec Mode, Steering, and Hooks to enforce standards and keep documentation in sync.
 
 #### Acceptance Criteria
 
-1. THE Framework SHALL include a `testng.xml` TestNG_Suite file in the project root that defines all test classes, sets `parallel="methods"` or `parallel="tests"`, and specifies a `thread-count` of at least 2 for parallel execution.
-2. THE Framework SHALL include a `testng-smoke.xml` TestNG_Suite file that includes only test classes or methods belonging to the `smoke` group, enabling targeted Smoke_Suite execution.
-3. THE Framework SHALL include a `testng-regression.xml` TestNG_Suite file that includes all test classes belonging to the `regression` group, enabling full Regression_Suite execution.
-4. WHEN a test method is defined, THE Framework SHALL annotate it with `@Test(groups = {"smoke"})` for smoke tests or `@Test(groups = {"regression"})` for regression tests, ensuring every test belongs to at least one named group.
-5. WHEN a test method requires multiple input combinations, THE Framework SHALL supply test data via a `@DataProvider`-annotated method in the `Test_Data_Provider` class, and the `@Test` method SHALL reference it using the `dataProvider` attribute.
-6. THE Framework SHALL implement a `TestNG_Listener` class in `src/test/java/listeners/` that implements `ITestListener` and overrides `onTestFailure`, `onTestSuccess`, and `onTestSkip` callbacks to integrate with the `Extent_Reporter` and `Screenshot_Utility`.
-7. THE Framework SHALL register the `TestNG_Listener` in each TestNG_Suite XML file using the `<listeners>` element so that it is active for all suite executions without requiring annotation on individual test classes.
-8. THE Framework SHALL implement a `TestNG_RetryAnalyzer` class in `src/test/java/utils/` that implements `IRetryAnalyzer` and retries a failed test up to a configurable maximum of 2 times before marking it as failed.
-9. WHEN a `@Test` method is subject to retry, THE Framework SHALL reference the `TestNG_RetryAnalyzer` via the `retryAnalyzer` attribute of the `@Test` annotation on that method.
-10. THE Framework SHALL configure the Maven Surefire plugin in `pom.xml` with the `<suiteXmlFiles>` element pointing to the active TestNG_Suite XML file, enabling `mvn test` to execute the correct suite without additional command-line flags.
+1. THE Framework SHALL include a Steering_File at `.kiro/steering/framework-standards.md` defining coding standards, naming conventions, POM structure rules, and Selenium/TestNG usage guidelines.
+2. WHEN a source file is edited, THE Kiro Hook SHALL trigger an action to update the README or `/docs` folder to reflect the change.
+3. THE Framework SHALL store all Kiro spec documents in `.kiro/specs/ai-ecommerce-automation-framework/`.
